@@ -25,6 +25,10 @@ bindkey -v
 autoload -U compinit
 compinit
 
+# Handy aliases
+
+alias ls='ls -F --color=auto'
+
 # Mess
 
 hash mess=~/mess/current
