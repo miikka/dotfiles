@@ -9,6 +9,10 @@ EXTENDED_HISTORY=1
 
 setopt autocd
 
+# Path
+
+PATH=${PATH}:~/bin
+
 # Prompt
 
 PHC=`((hostname|sum|cut -f1 -d' '); echo "6%31+d[1+]sa33<ap") | dc`
@@ -28,10 +32,11 @@ compinit
 # Handy aliases
 
 alias ls='ls -F --color=auto'
+alias gl='git log --format="%Cgreen%h %Cred%an %Creset%s %C(3)(%ar)"'
 
 # Mess
 
-hash mess=~/mess/current
+hash -d mess=~/mess/current
 
 function mess() {
 	MESSDIR=~/mess/`date +%G-%V`
@@ -45,3 +50,7 @@ function mess() {
 	cd $MESSDIR
 	unset MESSDIR
 }
+
+# Local
+
+source ~/.zshrc.local
