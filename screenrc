@@ -1,0 +1,6 @@
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%H: %w"
+
+# No copyright message at startup
+startup_message off
