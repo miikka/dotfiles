@@ -9,9 +9,10 @@ EXTENDED_HISTORY=1
 
 setopt autocd
 
-# Path
+# Env
 
-PATH=${PATH}:~/bin
+export PATH=${PATH}:~/bin
+export EDITOR=vim
 
 # Prompt
 
