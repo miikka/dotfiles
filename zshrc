@@ -54,4 +54,6 @@ function mess() {
 
 # Local
 
-source ~/.zshrc.local
+if [ -e ~/.zshrc.local ]; then
+	source ~/.zshrc.local
+end
