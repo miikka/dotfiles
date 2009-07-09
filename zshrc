@@ -33,7 +33,7 @@ compinit
 # Handy aliases
 
 alias ls='ls -F --color=auto'
-alias gl='git log --format="%Cgreen%h %Cred%an %Creset%s %C(3)(%ar)"'
+alias gl='git log "--pretty=format:%Cgreen%h %Cred%an %Creset%s %Cblue(%ar)"'
 
 # Mess
 
