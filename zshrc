@@ -32,8 +32,12 @@ compinit
 
 # Handy aliases
 
-alias ls='ls -F --color=auto'
-alias gl='git log --format="%Cgreen%h %Cred%an %Creset%s %C(3)(%ar)"'
+case `uname -s` in
+	"Darwin")	alias ls='ls -FG';;
+	*)			alias ls='ls -F --color=auto';;
+esac
+
+alias gl='git log --pretty=format:"%Cgreen%h %Cred%an %Creset%s %Cblue(%ar)"'
 
 # Mess
 
@@ -54,4 +58,6 @@ function mess() {
 
 # Local
 
-source ~/.zshrc.local
+if [ -e ~/.zshrc.local ]; then
+	source ~/.zshrc.local
+fi
