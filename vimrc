@@ -1,4 +1,4 @@
-syntax on
+syntax enable
 
 set noexpandtab smarttab
 set autoindent smartindent
