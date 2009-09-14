@@ -69,6 +69,7 @@ SYNC_LOCAL="$HOME/sync"
 function savedot() {
 	pushd ~/code/dotfiles
 	git commit -a
+	git push
 	popd
 }
 
