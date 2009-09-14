@@ -8,6 +8,7 @@ EXTENDED_HISTORY=1
 # Options
 
 setopt autocd
+setopt noignoreeof
 
 # Env
 
