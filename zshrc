@@ -12,7 +12,7 @@ setopt noignoreeof
 
 # Env
 
-export PATH=${PATH}:~/bin
+export PATH=${PATH}:~/bin:~/.cabal/bin
 export EDITOR=vim
 
 # Prompt
@@ -21,6 +21,13 @@ PHC=`((hostname|sum|cut -f1 -d' '); echo "6%31+d[1+]sa33<ap") | dc`
 HCP=$'%{\e['${PHC}$'m%}'
 PS1=$'%{\e[0;33m%}%?\%{\e[0;32m%}:%{\e[0;33m%}%j '$HCP$'%m%{\e[0;32m%}:%{\e[0;35m%}%~%{\e[0;32m%} %#%}%{\e[0m%} '
 unset PHC HCP
+
+case $TERM in
+	rxvt*)
+		chpwd() { print -Pn "\e]0;%n@%m: %~\a" }
+		chpwd
+		;;
+esac
 
 # Vi edit mode
 
