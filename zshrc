@@ -41,6 +41,7 @@ compinit
 # Handy aliases
 
 alias ls='ls -F --color=auto'
+alias st='git status'
 alias gl='git log "--pretty=format:%Cgreen%h %Cred%an %Creset%s %Cblue(%ar)"'
 
 # Mess
