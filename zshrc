@@ -45,6 +45,7 @@ case `uname -s` in
 	*)			alias ls='ls -F --color=auto';;
 esac
 
+alias st='git status'
 alias gl='git log "--pretty=format:%Cgreen%h %Cred%an %Creset%s %Cblue(%ar)"'
 
 # Mess
