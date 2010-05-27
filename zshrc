@@ -14,6 +14,7 @@ setopt noignoreeof
 
 export PATH=${PATH}:~/bin:~/.cabal/bin
 export EDITOR=vim
+export VISUAL=$EDITOR
 
 # Prompt
 
