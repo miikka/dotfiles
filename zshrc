@@ -14,6 +14,7 @@ setopt noignoreeof
 
 export PATH=${PATH}:~/bin:~/.cabal/bin
 export EDITOR=vim
+export VISUAL=$EDITOR
 
 # Prompt
 
@@ -48,6 +49,7 @@ esac
 alias st='git status'
 alias gl='git log "--pretty=format:%Cgreen%h %Cred%an %Creset%s %Cblue(%ar)"'
 alias lt='ls -ltr'
+alias xget='wget `xsel`'
 
 function hl() {
 	awk "/${*}/ { print \"\033[31m\" \$0 \"\033[0m\" }; !/${*}/ { print \$0 }"
