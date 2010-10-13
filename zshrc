@@ -48,7 +48,7 @@ esac
 
 alias st='git status'
 alias gl='git log "--pretty=format:%Cgreen%h %Cred%an %Creset%s %Cblue(%ar)"'
-alias lt='ls -ltr'
+alias lt='ls -lhtr'
 alias xget='wget `xsel`'
 
 function hl() {
