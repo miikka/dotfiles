@@ -42,14 +42,19 @@ compinit
 # Handy aliases
 
 case `uname -s` in
-	"Darwin")	alias ls='ls -FG';;
-	*)			alias ls='ls -F --color=auto';;
+	"Darwin")
+		alias ls='ls -FG'
+		alias xget='wget `pbpaste`'
+		;;
+	*)
+		alias ls='ls -F --color=auto'
+		alias xget='wget `xsel`'
+		;;
 esac
 
 alias st='git status'
 alias gl='git log "--pretty=format:%Cgreen%h %Cred%an %Creset%s %Cblue(%ar)"'
 alias lt='ls -lhtr'
-alias xget='wget `xsel`'
 
 function hl() {
 	awk "/${*}/ { print \"\033[31m\" \$0 \"\033[0m\" }; !/${*}/ { print \$0 }"
