@@ -72,28 +72,6 @@ function mess() {
 	unset MESSDIR
 }
 
-# Sync
-
-function sync() {
-	if [ ! -e $SYNC_LOCAL ]; then
-		mkdir -p $SYNC_LOCAL
-	fi
-	unison $SYNC_REPO $SYNC_LOCAL
-}
-
-SYNC_REPO="ssh://lakka.kapsi.fi/sync"
-SYNC_LOCAL="$HOME/sync"
-
-# Dotfiles env
-
-function savedot() {
-	pushd ~/code/dotfiles
-	git commit -a
-	git push
-	popd
-}
-
-
 # Local
 
 if [ -e ~/.zshrc.local ]; then
