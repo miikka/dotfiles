@@ -52,7 +52,7 @@ case `uname -s` in
 		;;
 esac
 
-alias st='git status'
+alias ach="ack --haskell"
 alias gl='git log "--pretty=format:%Cgreen%h %Cred%an %Creset%s %Cblue(%ar)"'
 alias lt='ls -lhtr'
 
