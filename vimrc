@@ -16,4 +16,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 if has('gui_running')
 	set nu list cursorline
 	set listchars=tab:»\ ,eol:¬,trail:·
+
+	" Disable the toolbar
+	set guioptions-=T
 end
