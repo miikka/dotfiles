@@ -18,6 +18,7 @@ export VISUAL=$EDITOR
 
 # Prompt
 
+## FIXME use zsh colors, get rid of hashed colors
 PHC=`((hostname|sum|cut -f1 -d' '); echo "6%31+d[1+]sa33<ap") | dc`
 HCP=$'%{\e['${PHC}$'m%}'
 PS1=$'%{\e[0;33m%}%?\%{\e[0;32m%} '$HCP$'%m%{\e[0;32m%}:%{\e[0;35m%}%~%{\e[0;32m%} %#%}%{\e[0m%} '
@@ -38,6 +39,8 @@ bindkey -v
 
 autoload -U compinit
 compinit
+
+zstyle ':completion:*:default' list-colors ''
 
 # Handy aliases
 
