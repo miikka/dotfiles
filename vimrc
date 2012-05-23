@@ -21,3 +21,9 @@ if has('gui_running')
 	" Disable the toolbar
 	set guioptions-=T
 end
+
+set wildignore+=*.pyc,*.rbc,.*.swp,*/.sass-cache/*
+
+let g:ctrlp_custom_ignore = {
+	\ 'dir': '\.git$\|dev$\|ENV$',
+	\ }
