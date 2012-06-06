@@ -11,7 +11,7 @@ set autoindent smartindent
 set sw=4 ts=4
 set ruler
 
-autocmd FileType python setl sw=4 sts=4 et
+autocmd FileType python setl ts=8 sw=4 sts=4 et
 autocmd FileType coffee setl sw=2 sts=2 et
 
 if has('gui_running')
