@@ -27,7 +27,7 @@ end
 set wildignore+=*.pyc,*.rbc,.*.swp,*/.sass-cache/*
 
 let g:ctrlp_custom_ignore = {
-	\ 'dir': '\.git$\|dev$\|ENV$',
+	\ 'dir': '\.git$\|dev$\|ENV$\|node_modules$',
 	\ }
 
 nmap <C-b> :CtrlPBuffer<Return>
