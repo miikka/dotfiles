@@ -47,7 +47,7 @@ zstyle ':completion:*:default' list-colors ''
 case `uname -s` in
 	"Darwin")
 		alias ls='ls -FG'
-		alias xget='wget `pbpaste`'
+		alias xget='curl -O `pbpaste`'
 		;;
 	*)
 		alias ls='ls -F --color=auto'
