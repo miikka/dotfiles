@@ -24,7 +24,7 @@ if has('gui_running')
 	set guioptions-=T
 end
 
-set wildignore+=*.pyc,*.rbc,.*.swp,*/.sass-cache/*
+set wildignore+=*.pyc,*.rbc,.*.swp,*/.sass-cache/*,*.ibc,*.o
 
 let g:ctrlp_custom_ignore = {
 	\ 'dir': '\.git$\|dev$\|ENV$\|node_modules$',
