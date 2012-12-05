@@ -16,12 +16,32 @@ export PATH=${PATH}:~/bin:~/.cabal/bin
 export EDITOR=vim
 export VISUAL=$EDITOR
 
+# Colors
+
+# Set up $fg
+autoload -U colors && colors
+
+# VCS info
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*' check-for-changes true
+zstyle ':vcs_info:git*' stagedstr "%{$fg[yellow]%}"
+zstyle ':vcs_info:git*' unstagedstr "%{$fg[red]%}"
+zstyle ':vcs_info:git*' formats " %{$fg[green]%}%c%u[%b]"
+
+precmd() {
+  vcs_info
+}
+
 # Prompt
+
+setopt prompt_subst
 
 ## FIXME use zsh colors, get rid of hashed colors
 PHC=`((hostname|sum|cut -f1 -d' '); echo "6%31+d[1+]sa33<ap") | dc`
 HCP=$'%{\e['${PHC}$'m%}'
-PS1=$'%{\e[0;33m%}%?\%{\e[0;32m%} '$HCP$'%m%{\e[0;32m%}:%{\e[0;35m%}%~%{\e[0;32m%} %#%}%{\e[0m%} '
+PS1=$'%{\e[0;33m%}%?\%{\e[0;32m%} '$HCP$'%m%{\e[0;32m%}:%{\e[0;35m%}%~${vcs_info_msg_0_}%{\e[0;32m%} %#%}%{\e[0m%} '
 unset PHC HCP
 
 case $TERM in
