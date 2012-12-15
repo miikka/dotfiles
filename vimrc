@@ -13,6 +13,7 @@ set ruler
 
 autocmd FileType python setl ts=8 sw=4 sts=4 et
 autocmd FileType coffee setl sw=2 sts=2 et
+autocmd FileType haskell nmap <Leader>s :%!stylish-haskell<Return>
 
 au BufRead,BufNewFile *.wiki set filetype=creole
 
