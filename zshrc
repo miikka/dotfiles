@@ -80,10 +80,6 @@ alias gl='git log "--pretty=format:%Cgreen%h %Cred%an %Creset%s %Cblue(%ar)"'
 alias lt='ls -lhtr'
 alias grep='grep --color=auto'
 
-function hl() {
-	awk "/${*}/ { print \"\033[31m\" \$0 \"\033[0m\" }; !/${*}/ { print \$0 }"
-}
-
 # Mess
 
 hash -d mess=~/mess/current
