@@ -1,9 +1,5 @@
-set nocp
-
-call pathogen#infect()
-
+source ~/code/dotfiles/bundles.vim
 syntax enable
-filetype plugin indent on
 
 set noexpandtab smarttab
 set autoindent smartindent

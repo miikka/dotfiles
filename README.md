@@ -13,7 +13,12 @@ Below is a list of some handy extensions I use.
 * [v](https://github.com/rupa/v) for opening recently edited files in Vim.
 * [rbenv](https://github.com/sstephenson/rbenv) for dealing with Ruby versions.
 
-## Vim plugins
+## Vim setup
 
-* [pathogen.vim](https://github.com/tpope/vim-pathogen) for managing Vim plugins.
-* [ctrlp.vim](https://github.com/kien/ctrlp.vim) for quickly finding files and buffers.
+Vim plugins are managed with [Vundle](https://github.com/gmarik/vundle). This
+way, you only need to install Vundle and it pulls in the rest.
+
+Install Vundle:
+
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle 
+    vim -u ~/code/dotfiles/bundles.vim +BundleInstall +qall
