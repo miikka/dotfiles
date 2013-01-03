@@ -31,7 +31,7 @@ zstyle ':vcs_info:git*' unstagedstr "%{$fg[red]%}"
 zstyle ':vcs_info:git*' formats " %{$fg[green]%}%c%u[%b]"
 
 precmd() {
-  vcs_info
+	vcs_info
 }
 
 # Prompt
