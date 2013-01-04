@@ -1,3 +1,4 @@
 --pager=less -r
 --type-set=cs=.coffee
 --type-set=idr=.idr
+--type-set=clojure=.clj
