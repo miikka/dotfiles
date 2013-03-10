@@ -43,3 +43,6 @@
 (let ((local-conf (expand-file-name "~/.emacs.d/local.el")))
   (if (file-exists-p local-conf)
       (load-file local-conf)))
+
+(setq custom-file "~/.emacs.d/custom.el")
+(if (file-exists-p custom-file) (load custom-file))
