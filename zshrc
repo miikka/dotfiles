@@ -11,6 +11,7 @@ setopt EXTENDED_HISTORY
 
 setopt autocd
 setopt noignoreeof
+setopt EXTENDED_GLOB
 
 # Env
 
