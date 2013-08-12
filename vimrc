@@ -1,7 +1,7 @@
 source ~/code/dotfiles/bundles.vim
 syntax enable
 
-set noexpandtab smarttab
+set expandtab smarttab
 set autoindent smartindent
 
 set sw=4 ts=4
