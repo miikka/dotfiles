@@ -84,6 +84,7 @@ alias ach="ack --haskell"
 alias gl='git log "--pretty=format:%Cgreen%h %Cred%an %Creset%s %Cblue(%ar)"'
 alias lt='ls -lhtr'
 alias grep='grep --color=auto'
+alias gg='noglob git g'
 
 # Mess
 
@@ -100,6 +101,15 @@ function mess() {
 
 	cd $MESSDIR
 	unset MESSDIR
+}
+
+# stolen from chris2
+# http://chneukirchen.org/blog/archive/2013/07/summer-of-scripts-l-and-lr.html
+
+l() {
+  local p=$argv[-1]
+  [[ -d $p ]] && { argv[-1]=(); } || p='.'
+  find $p ! -type d | sed 's:^./::' | egrep "${@:-.}"
 }
 
 # Local
