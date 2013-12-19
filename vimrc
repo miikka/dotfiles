@@ -36,3 +36,7 @@ let g:ctrlp_custom_ignore = {
 	\ }
 
 nmap <C-b> :CtrlPBuffer<Return>
+
+if filereadable(expand("~/.vim/local.vim"))
+    source ~/.vim/local.vim
+endif
