@@ -13,6 +13,7 @@ set autoread
 set incsearch
 set showmatch
 set undofile
+set undodir=~/.vim/undo
 
 autocmd FileType python setl ts=8 sw=4 sts=4 et
 autocmd FileType coffee setl sw=2 sts=2 et
