@@ -71,7 +71,7 @@ zstyle ':completion:*:default' list-colors ''
 # Handy aliases
 
 case `uname -s` in
-	"Darwin")
+	Darwin|FreeBSD)
 		alias ls='ls -FG'
 		alias xget='curl -O --location --remote-header-name `pbpaste`'
 		;;
