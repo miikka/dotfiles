@@ -19,6 +19,7 @@ setopt interactivecomments
 export PATH=${PATH}:~/bin:~/.cabal/bin
 export EDITOR=vim
 export VISUAL=$EDITOR
+export PAGER=less
 
 # Colors
 
