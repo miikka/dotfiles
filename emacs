@@ -36,6 +36,12 @@
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 
+;;; smex
+
+(require 'smex)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
 ;;; Magit
 
 (global-set-key (kbd "<f6>") 'magit-status)
