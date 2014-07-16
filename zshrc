@@ -20,6 +20,7 @@ setopt AUTO_PUSHD
 export PATH=${PATH}:~/bin:~/.cabal/bin
 export EDITOR=vim
 export VISUAL=$EDITOR
+export PAGER=less
 
 # Colors
 
@@ -73,7 +74,7 @@ zstyle ':completion:*:default' list-colors ''
 # Handy aliases
 
 case `uname -s` in
-	"Darwin")
+	Darwin|FreeBSD)
 		alias ls='ls -FG'
 		alias xget='curl -O --location --remote-header-name `pbpaste`'
 		;;
