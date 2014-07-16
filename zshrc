@@ -13,6 +13,7 @@ setopt autocd
 setopt noignoreeof
 setopt EXTENDED_GLOB
 setopt interactivecomments
+setopt AUTO_PUSHD
 
 # Env
 
@@ -48,7 +49,8 @@ case `hostname -f` in
 	*) HOSTCOLOR=$fg[green];;
 esac
 
-PROMPT="%{$fg[yellow]%}%? %{$HOSTCOLOR%}%m%{$fg[green]%}:%{$fg[magenta]%}%~\${vcs_info_msg_0_} %{$fg[green]%}%#%{$reset_color%} "
+
+PROMPT="%(?..%{$fg[yellow]%}%? )%{$HOSTCOLOR%}%m%{$fg[green]%}:%{$fg[magenta]%}%~\${vcs_info_msg_0_} %{$fg[green]%}%#%{$reset_color%} "
 
 case $TERM in
 	(xterm|rxvt*)
