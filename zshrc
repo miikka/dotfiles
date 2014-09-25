@@ -40,6 +40,10 @@ precmd() {
 	vcs_info
 }
 
+# Enable zmv
+
+autoload -U zmv
+
 # Prompt
 
 setopt prompt_subst
