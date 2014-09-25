@@ -1,5 +1,15 @@
 ; -*- mode: emacs-lisp -*-
 
+;;; Customization in its own file
+;;;
+;;; This should be done early in the configuration so that the customizations
+;;; get loaded. For example, load-theme stores safe themes in a custom variable.
+
+(setq custom-file "~/.emacs.d/custom.el")
+(if (file-exists-p custom-file) (load custom-file))
+
+;;; General stuff
+
 (ido-mode t)
 (global-font-lock-mode 1)
 (server-start)
@@ -13,6 +23,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (defun package-install-if-needed (package)
@@ -51,6 +63,3 @@
 (let ((local-conf (expand-file-name "~/.emacs.d/local.el")))
   (if (file-exists-p local-conf)
       (load-file local-conf)))
-
-(setq custom-file "~/.emacs.d/custom.el")
-(if (file-exists-p custom-file) (load custom-file))
