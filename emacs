@@ -50,6 +50,7 @@
 
 ;;; smex
 
+(package-install-if-needed 'smex)
 (require 'smex)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
@@ -57,6 +58,11 @@
 ;;; Magit
 
 (global-set-key (kbd "<f6>") 'magit-status)
+
+;;; Clojure
+
+(add-hook 'clojure-mode-hook 'enable-paredit-mode)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode-enable)
 
 ;;; Local configuration
 
