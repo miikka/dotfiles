@@ -103,8 +103,7 @@ function mess() {
 
 	if [ ! -e $MESSDIR ]; then
 		mkdir -p $MESSDIR
-		rm ~/mess/current
-		ln -s $MESSDIR ~/mess/current
+		ln -snf $MESSDIR ~/mess/current
 	fi
 
 	cd $MESSDIR
