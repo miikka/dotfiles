@@ -46,7 +46,7 @@
 
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(menu-bar-mode -1)
+(if (not (eq system-type 'darwin)) (menu-bar-mode -1))
 
 ;;; smex
 
@@ -58,6 +58,11 @@
 ;;; Magit
 
 (global-set-key (kbd "<f6>") 'magit-status)
+
+;; Emacs Lisp
+
+(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode-enable)
 
 ;;; Clojure
 

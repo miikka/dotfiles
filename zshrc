@@ -100,7 +100,7 @@ alias gg='noglob git g'
 hash -d mess=~/mess/current
 
 function mess() {
-	MESSDIR=~/mess/`date +%G-%V`
+	local MESSDIR=~/mess/`date +%G-%V`
 
 	if [ ! -e $MESSDIR ]; then
 		mkdir -p $MESSDIR
@@ -108,7 +108,6 @@ function mess() {
 	fi
 
 	cd $MESSDIR
-	unset MESSDIR
 }
 
 # stolen from chris2
