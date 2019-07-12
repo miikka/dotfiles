@@ -6,6 +6,7 @@ HISTFILE=~/.history
 setopt APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_SPACE
 
 # Options
 
