@@ -20,14 +20,28 @@
   echo 500 | sudo tee /sys/class/backlight/intel_backlight/brightness
   #+END_SRC
 * TODO Customize i3's status bar
+  - Simpler network info would be enough: just show me which wifi I'm connected to
+  - No need for the free disk space or swap info either.
+  - Showing both batteries would be nice
 * TODO Figure out how to take screenshots
 * TODO Import global git configuration
 * TODO Configure restic for backups
-* TODO Install Dropbox
+* Dropbox
+** DONE Install Dropbox
+   CLOSED: [2020-02-15 Sat 12:57]
+   https://nixos.wiki/wiki/Dropbox
+   #+BEGIN_SRC sh
+   NIXPKGS_ALLOW_UNFREE=1 nix-env -iA nixos.dropbox
+   #+END_SRC
+** TODO How to start it automatically?
+** DONE How to tell what it is doing?
+   CLOSED: [2020-02-15 Sat 13:06]
+   Dropbox shows up in i3-status-bar as an applet.
+* TODO Find a graphical file browser
 * TODO Install 1Password
 * SSD upgrade [0/3]
 ** TODO Find a suitable SSD
-** TODO Backup the SSB key
+** TODO Backup the SSB key and other important files
 ** TODO Wipe the old SSD
 ** TODO Install the new SSD
 ** TODO Configure disk encryption
@@ -44,3 +58,6 @@
 * TODO Add my user to LightDM's user list
 * TODO Remove the xterm desktop manager
 * TODO Figure out how to search Nix packages
+* TODO Figure out how to paste from selection buffer in Spacemacs
+* TODO Is it possible to use Emacs edit bindings in text boxes?
+  I mean C-a / C-e etc.
