@@ -61,3 +61,5 @@
 * TODO Figure out how to paste from selection buffer in Spacemacs
 * TODO Is it possible to use Emacs edit bindings in text boxes?
   I mean C-a / C-e etc.
+* TODO Try out the webcam
+* TODO Install Hugo and other blogging tools
