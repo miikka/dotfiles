@@ -1,28 +1,45 @@
 #+TITLE: Setting up NixOS on Lenovo Thinkpad X250
 * Chromium
 ** TODO Configure Chromium's DPI scaling
-** TODO Install ad blocker
-* TODO Configure Firefox's DPI scaling
+** DONE Install ad blocker
+   CLOSED: [2020-02-15 Sat 12:10]
+** DONE Install HTTPS Everywhere
+   CLOSED: [2020-02-15 Sat 12:10]
+* Firefox
+** TODO Configure Firefox's DPI scaling
+** TODO Configure Firefox Sync
+** TODO Install OneTab extension
+** TODO Install HTTPS Everywhere
 * Keyboard [0/3]
 ** TODO Configure Arkkudvorak
 ** TODO Configure Caps Lock as Escape
 ** TODO Configure the media keys
+* TODO Figure out how to adjust screen brightness
+  This works from command-line, but I want to have be able to use the media keys.
+  #+BEGIN_SRC sh
+  echo 500 | sudo tee /sys/class/backlight/intel_backlight/brightness
+  #+END_SRC
 * TODO Customize i3's status bar
 * TODO Figure out how to take screenshots
 * TODO Import global git configuration
+* TODO Configure restic for backups
+* TODO Install Dropbox
+* TODO Install 1Password
 * SSD upgrade [0/3]
 ** TODO Find a suitable SSD
 ** TODO Backup the SSB key
 ** TODO Wipe the old SSD
 ** TODO Install the new SSD
 ** TODO Configure disk encryption
-* TODO Install 1Password
 * TODO Create a SSH public key
 * TODO Enable auto-login
+  This can be done once I've encrypted the disk.
 * TODO Configure suspend/hibernate
-* TODO Configure restic for backups
-* TODO Install Dropbox
+* TODO Move wireless network configuration away from configuration.nix
 * TODO Import configuration files to dotfiles repo
+  - configuration.nix
+  - alacritty
+  - i3
 * TODO Find a nice sticker for the laptop cover
 * TODO Add my user to LightDM's user list
 * TODO Remove the xterm desktop manager
