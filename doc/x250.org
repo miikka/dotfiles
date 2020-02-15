@@ -1,4 +1,7 @@
 #+TITLE: Setting up NixOS on Lenovo Thinkpad X250
+
+Story of my LOL (Linux on Laptop) setup.
+
 * Chromium
 ** TODO Configure Chromium's DPI scaling
 ** DONE Install ad blocker
@@ -9,7 +12,8 @@
 ** TODO Configure Firefox's DPI scaling
 ** TODO Configure Firefox Sync
 ** TODO Install OneTab extension
-** TODO Install HTTPS Everywhere
+** DONE Install HTTPS Everywhere
+   CLOSED: [2020-02-15 Sat 20:10]
 * Keyboard [0/3]
 ** TODO Configure Arkkudvorak
 ** TODO Configure Caps Lock as Escape
@@ -55,11 +59,25 @@
   - alacritty
   - i3
 * TODO Find a nice sticker for the laptop cover
-* TODO Add my user to LightDM's user list
-* TODO Remove the xterm desktop manager
+* DONE Remove the xterm desktop manager
+  CLOSED: [2020-02-15 Sat 20:27]
 * TODO Figure out how to search Nix packages
 * TODO Figure out how to paste from selection buffer in Spacemacs
 * TODO Is it possible to use Emacs edit bindings in text boxes?
   I mean C-a / C-e etc.
 * TODO Try out the webcam
-* TODO Install Hugo and other blogging tools
+* DONE Install Hugo and other blogging tools
+  CLOSED: [2020-02-15 Sat 18:37]
+  I need the latest version of Hugo -- the version in 19.09 is too old. So let's
+  instable it via unstable:
+  #+BEGIN_SRC sh
+  sudo nix-channel --add https://nixos.org/channels/nixos-unstable unstable
+  sudo nix-channel --update
+  nix-env -iA unstable.hugo
+
+  # The rest of the tools
+  nix-env -iA nixos.graphicsmagick
+  nix-env -iA nixos.libjpeg_drop
+  nix-env -iA nixos.libwebp
+  #+END_SRC
+* TODO Try creating a default.nix file for the blog
