@@ -61,7 +61,13 @@ Story of my LOL (Linux on Laptop) setup.
 * TODO Find a nice sticker for the laptop cover
 * DONE Remove the xterm desktop manager
   CLOSED: [2020-02-15 Sat 20:27]
-* TODO Figure out how to search Nix packages
+* DONE Figure out how to search Nix packages
+  CLOSED: [2020-02-15 Sat 20:36]
+  This is extremely slow, but works:
+  #+BEGIN_SRC sh
+  nix-env -qaP ".*emacs.*"
+  #+END_SRC
+  This website is a bit faster: https://nixos.org/nixos/packages.html?channel=nixos-19.09
 * TODO Figure out how to paste from selection buffer in Spacemacs
 * TODO Is it possible to use Emacs edit bindings in text boxes?
   I mean C-a / C-e etc.
