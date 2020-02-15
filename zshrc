@@ -59,7 +59,7 @@ esac
 PROMPT="%(?..%{$fg[yellow]%}%? )%{$HOSTCOLOR%}%m%{$fg[green]%}:%{$fg[magenta]%}%~\${vcs_info_msg_0_} %{$fg[green]%}%#%{$reset_color%} "
 
 case $TERM in
-	(xterm|rxvt*)
+	(xterm|rxvt*|alacritty)
 		chpwd() { print -Pn "\e]0;%n@%m: %~\a" }
 		chpwd
 		;;
