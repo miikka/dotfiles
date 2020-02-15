@@ -1,0 +1,18 @@
+#+TITLE: Setting up NixOS on Lenovo Thinkpad X250
+* TODO Configure Chromium's DPI scaling
+* TODO Configure Firefox's DPI scaling
+* TODO Configure Arkkudvorak
+* TODO Configure the media keys
+* TODO Customize i3's status bar
+* TODO Figure out how to take screenshots
+* TODO Import global git configuration
+* SSD upgrade [/]
+** TODO Find a suitable SSD
+** TODO Install the new SSD
+** TODO Configure disk encryption
+* TODO Create a SSH public key
+* TODO Enable auto-login
+* TODO Configure suspend/hibernate
+* TODO Configure restic for backups
+* TODO Install Dropbox
+* TODO Import configuration files to dotfiles repo
