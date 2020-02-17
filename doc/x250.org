@@ -46,8 +46,42 @@ Story of my LOL (Linux on Laptop) setup.
    Dropbox shows up in i3-status-bar as an applet.
 * TODO Find a graphical file browser
 * TODO Install 1Password
-* SSD upgrade [0/3]
-** TODO Find a suitable SSD
+* SSD upgrade [2/6]
+** DONE Find a suitable SSD
+   CLOSED: [2020-02-17 Mon 21:57]
+   Crucial MX500 seems to have very favorable reviews and good price. 500 GB
+   seems like the rigth size for me and the 2.5" SATA model should fit.
+** DONE Benchmark the old disk
+   CLOSED: [2020-02-17 Mon 22:03]
+   I doubt thes benchmarks indicate much, but hey.
+
+   #+BEGIN_SRC
+   nixos:~ % sudo hdparm -t /dev/sda
+   
+   /dev/sda:
+   Timing buffered disk reads: 1508 MB in  3.01 seconds = 501.75 MB/sec
+   nixos:~ % sudo hdparm -t /dev/sda
+   
+   /dev/sda:
+   Timing buffered disk reads: 1582 MB in  3.00 seconds = 526.70 MB/sec
+   nixos:~ % sudo hdparm -t /dev/sda
+   
+   /dev/sda:
+   Timing buffered disk reads: 1518 MB in  3.00 seconds = 505.99 MB/sec
+   nixos:~ % sudo hdparm -T /dev/sda
+   
+   /dev/sda:
+   Timing cached reads:   11508 MB in  1.99 seconds = 5771.51 MB/sec
+   nixos:~ % sudo hdparm -T /dev/sda
+   
+   /dev/sda:
+   Timing cached reads:   9100 MB in  2.00 seconds = 4561.20 MB/sec
+   nixos:~ % sudo hdparm -T /dev/sda
+   
+   /dev/sda:
+   Timing cached reads:   11098 MB in  1.99 seconds = 5565.57 MB/sec
+   nixos:~ %
+   #+END_SRC
 ** TODO Backup the SSB key and other important files
 ** TODO Wipe the old SSD
 ** TODO Install the new SSD
@@ -97,3 +131,4 @@ Story of my LOL (Linux on Laptop) setup.
   #+END_SRC
 * TODO Try creating a default.nix file for the blog
 * TODO Get a privacy filter for the screen
+* TODO Try out Bluetooth
