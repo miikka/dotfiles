@@ -4,6 +4,9 @@ Story of my LOL (Linux on Laptop) setup.
 
 * Chromium
 ** TODO Configure Chromium's DPI scaling
+   #+BEGIN_SRC sh
+   chromium --force-device-scale-factor=1.5
+   #+END_SRC
 ** DONE Install ad blocker
    CLOSED: [2020-02-15 Sat 12:10]
 ** DONE Install HTTPS Everywhere
@@ -53,11 +56,15 @@ Story of my LOL (Linux on Laptop) setup.
 * TODO Enable auto-login
   This can be done once I've encrypted the disk.
 * TODO Configure suspend/hibernate
-* TODO Move wireless network configuration away from configuration.nix
-* TODO Import configuration files to dotfiles repo
+* DONE Move wireless network configuration away from configuration.nix
+  CLOSED: [2020-02-17 Mon 19:35]
+  Now in /etc/nixos/wifi.nix, which is imported from configuration.nix
+* DONE Import configuration files to dotfiles repo
+  CLOSED: [2020-02-17 Mon 19:39]
   - configuration.nix
   - alacritty
   - i3
+* TODO Try out stow for dotfiles
 * TODO Find a nice sticker for the laptop cover
 * DONE Remove the xterm desktop manager
   CLOSED: [2020-02-15 Sat 20:27]
@@ -68,7 +75,9 @@ Story of my LOL (Linux on Laptop) setup.
   nix-env -qaP ".*emacs.*"
   #+END_SRC
   This website is a bit faster: https://nixos.org/nixos/packages.html?channel=nixos-19.09
-* TODO Figure out how to paste from selection buffer in Spacemacs
+* DONE Figure out how to paste from selection buffer in Spacemacs
+  CLOSED: [2020-02-17 Mon 19:29]
+  The command is "*p
 * TODO Is it possible to use Emacs edit bindings in text boxes?
   I mean C-a / C-e etc.
 * TODO Try out the webcam
@@ -87,3 +96,4 @@ Story of my LOL (Linux on Laptop) setup.
   nix-env -iA nixos.libwebp
   #+END_SRC
 * TODO Try creating a default.nix file for the blog
+* TODO Get a privacy filter for the screen
