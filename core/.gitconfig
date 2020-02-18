@@ -1,0 +1,11 @@
+[user]
+	name = Miikka Koskinen
+	email = miikka.koskinen@iki.fi
+[alias]
+	st = status -sb
+	co = checkout
+	publish = push -u miikka HEAD
+	cach = commit --amend -CHEAD
+	pushf = push --force-with-lease
+[rerere]
+	enabled = true
