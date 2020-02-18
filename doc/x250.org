@@ -31,7 +31,8 @@ Story of my LOL (Linux on Laptop) setup.
   - No need for the free disk space or swap info either.
   - Showing both batteries would be nice
 * TODO Figure out how to take screenshots
-* TODO Import global git configuration
+* DONE Import global git configuration
+  CLOSED: [2020-02-18 Tue 20:07]
 * TODO Configure restic for backups
 * Dropbox
 ** DONE Install Dropbox
