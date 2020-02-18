@@ -98,7 +98,8 @@ Story of my LOL (Linux on Laptop) setup.
   - configuration.nix
   - alacritty
   - i3
-* TODO Try out stow for dotfiles
+* DONE Try out stow for dotfiles
+  CLOSED: [2020-02-18 Tue 20:03]
 * TODO Find a nice sticker for the laptop cover
 * DONE Remove the xterm desktop manager
   CLOSED: [2020-02-15 Sat 20:27]
