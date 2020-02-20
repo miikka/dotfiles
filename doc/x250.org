@@ -134,3 +134,14 @@ Story of my LOL (Linux on Laptop) setup.
 * TODO Try creating a default.nix file for the blog
 * TODO Get a privacy filter for the screen
 * TODO Try out Bluetooth
+* DONE Try out the touch screen
+  CLOSED: [2020-02-18 Tue 20:27]
+  OMG! Clicking works out of the box!
+
+  One-finger scrolling in Firefox requires two things:
+  - In about:config, dom.w3c_touch_events.enabled set to 1 (enabled), not 2 (auto-detect)
+  - Start Firefox with environmental variable MOZ_USE_XINPUT2=1
+
+  #+BEGIN_SRC sh
+  MOZ_USE_XINPUT2=1 env firefox
+  #+END_SRC
