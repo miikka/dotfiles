@@ -2,7 +2,7 @@
 
 Story of my LOL (Linux on Laptop) setup.
 
-* Chromium
+* Chromium [2/3]
 ** TODO Configure Chromium's DPI scaling
    #+BEGIN_SRC sh
    chromium --force-device-scale-factor=1.5
@@ -11,10 +11,11 @@ Story of my LOL (Linux on Laptop) setup.
    CLOSED: [2020-02-15 Sat 12:10]
 ** DONE Install HTTPS Everywhere
    CLOSED: [2020-02-15 Sat 12:10]
-* Firefox
+* Firefox [2/4]
 ** TODO Configure Firefox's DPI scaling
 ** TODO Configure Firefox Sync
-** TODO Install OneTab extension
+** DONE Install OneTab extension
+   CLOSED: [2020-02-20 Thu 15:37]
 ** DONE Install HTTPS Everywhere
    CLOSED: [2020-02-15 Sat 20:10]
 * Keyboard [0/3]
@@ -30,11 +31,28 @@ Story of my LOL (Linux on Laptop) setup.
   - Simpler network info would be enough: just show me which wifi I'm connected to
   - No need for the free disk space or swap info either.
   - Showing both batteries would be nice
+* TODO Try out i3-gaps
 * TODO Figure out how to take screenshots
 * DONE Import global git configuration
   CLOSED: [2020-02-18 Tue 20:07]
-* TODO Configure restic for backups
-* Dropbox
+* Backups [1/2]
+** DONE Configure restic for backups
+   CLOSED: [2020-02-20 Thu 18:15]
+   Let's first try it out interactively:
+   #+BEGIN_SRC
+   nix-env -iA nixos.restic
+   #+END_SRC
+   
+   #+BEGIN_SRC
+   restic init
+   restic --verbose --exclude-file=excludes.txt backup "$HOME"
+   #+END_SRC
+
+** TODO Store a copy of the backup credentials
+** TODO Figure out how to make it run regularly
+   The systemd unit runs at the middle of night and I never have the computer
+   open at that time.
+* Dropbox [2/3]
 ** DONE Install Dropbox
    CLOSED: [2020-02-15 Sat 12:57]
    https://nixos.wiki/wiki/Dropbox
@@ -47,7 +65,7 @@ Story of my LOL (Linux on Laptop) setup.
    Dropbox shows up in i3-status-bar as an applet.
 * TODO Find a graphical file browser
 * TODO Install 1Password
-* SSD upgrade [2/6]
+* SSD upgrade [3/6]
 ** DONE Find a suitable SSD
    CLOSED: [2020-02-17 Mon 21:57]
    Crucial MX500 seems to have very favorable reviews and good price. 500 GB
@@ -83,7 +101,9 @@ Story of my LOL (Linux on Laptop) setup.
    Timing cached reads:   11098 MB in  1.99 seconds = 5565.57 MB/sec
    nixos:~ %
    #+END_SRC
-** TODO Backup the SSB key and other important files
+** DONE Backup the SSB key and other important files
+   CLOSED: [2020-02-21 Fri 11:48]
+   Magic Wormhole magically works!
 ** TODO Wipe the old SSD
 ** TODO Install the new SSD
 ** TODO Configure disk encryption
@@ -91,6 +111,7 @@ Story of my LOL (Linux on Laptop) setup.
 * TODO Enable auto-login
   This can be done once I've encrypted the disk.
 * TODO Configure suspend/hibernate
+  - Would be nice if the laptop would hibernate when the battery is running out.
 * DONE Move wireless network configuration away from configuration.nix
   CLOSED: [2020-02-17 Mon 19:35]
   Now in /etc/nixos/wifi.nix, which is imported from configuration.nix
