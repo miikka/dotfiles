@@ -104,6 +104,20 @@
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
+  services.restic.backups = {
+    b2 = {
+      paths = [ "/home/miikka" "/etc/nixos" ];
+      repository = "b2:miikka-restic:";
+      passwordFile = "/etc/nixos/restic/password";
+      # It's called "s3" credentials file, but you can put any
+      # kind of environmental variables there.
+      s3CredentialsFile = "/etc/nixos/restic/env";
+      extraBackupArgs = [
+        "--exclude-file=/etc/nixos/restic/excludes.txt"
+      ];
+    };
+  };
+
   users.users.miikka = {
     isNormalUser = true;
     shell = pkgs.zsh;
