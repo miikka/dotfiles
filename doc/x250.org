@@ -157,6 +157,11 @@ Story of my LOL (Linux on Laptop) setup.
   nix-env -qaP ".*emacs.*"
   #+END_SRC
   This website is a bit faster: https://nixos.org/nixos/packages.html?channel=nixos-19.09
+  
+  The good way to search is:
+  #+BEGIN_SRC sh
+  nix search emacs
+  #+END_SRC
 * DONE Figure out how to paste from selection buffer in Spacemacs
   CLOSED: [2020-02-17 Mon 19:29]
   The command is "*p
