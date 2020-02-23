@@ -18,9 +18,13 @@ Story of my LOL (Linux on Laptop) setup.
    CLOSED: [2020-02-20 Thu 15:37]
 ** DONE Install HTTPS Everywhere
    CLOSED: [2020-02-15 Sat 20:10]
-* Keyboard [0/3]
+* Keyboard [1/3]
 ** TODO Configure Arkkudvorak
-** TODO Configure Caps Lock as Escape
+** DONE Configure Caps Lock as Escape
+   CLOSED: [2020-02-23 Sun 16:44]
+   #+BEGIN_SRC
+   services.xserver.xkbOptions = "caps:escape";
+   #+END_SRC
 ** TODO Configure the media keys
 * TODO Figure out how to adjust screen brightness
   This works from command-line, but I want to have be able to use the media keys.
@@ -52,7 +56,7 @@ Story of my LOL (Linux on Laptop) setup.
 ** TODO Figure out how to make it run regularly
    The systemd unit runs at the middle of night and I never have the computer
    open at that time.
-* Dropbox [2/3]
+* Dropbox [3/4]
 ** DONE Install Dropbox
    CLOSED: [2020-02-15 Sat 12:57]
    https://nixos.wiki/wiki/Dropbox
@@ -63,7 +67,8 @@ Story of my LOL (Linux on Laptop) setup.
 ** DONE How to tell what it is doing?
    CLOSED: [2020-02-15 Sat 13:06]
    Dropbox shows up in i3-status-bar as an applet.
-** TODO Re-install Dropbox
+** DONE Re-install Dropbox
+   CLOSED: [2020-02-23 Sun 16:15]
 * TODO Find a graphical file browser
 * TODO Install 1Password
 * SSD upgrade [3/6]
