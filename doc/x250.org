@@ -63,6 +63,7 @@ Story of my LOL (Linux on Laptop) setup.
 ** DONE How to tell what it is doing?
    CLOSED: [2020-02-15 Sat 13:06]
    Dropbox shows up in i3-status-bar as an applet.
+** TODO Re-install Dropbox
 * TODO Find a graphical file browser
 * TODO Install 1Password
 * SSD upgrade [3/6]
