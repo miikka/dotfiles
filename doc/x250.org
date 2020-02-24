@@ -142,7 +142,7 @@ Story of my LOL (Linux on Laptop) setup.
   CLOSED: [2020-02-17 Mon 19:29]
   The command is "*p
 * TODO Is it possible to use Emacs edit bindings in text boxes?
-  I mean C-a / C-e etc.
+  I mean C-a / C-e etc. Seems complicated. :|
 * TODO Try out the webcam
 * DONE Install Hugo and other blogging tools
   CLOSED: [2020-02-15 Sat 18:37]
