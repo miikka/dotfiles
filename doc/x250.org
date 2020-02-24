@@ -54,9 +54,11 @@ Story of my LOL (Linux on Laptop) setup.
 
 ** TODO Store a copy of the backup credentials
 ** TODO Figure out how to make it run regularly
-   The systemd unit runs at the middle of night and I never have the computer
-   open at that time.
-* Dropbox [3/4]
+   I thought that the systemd unit runs at the middle of night and I never have
+   the computer open at that time, but if the computer has been suspended, it
+   actually runs it in the morning, then. That's fine.
+** TODO Configure the removal of old backups
+* Dropbox [/]
 ** DONE Install Dropbox
    CLOSED: [2020-02-15 Sat 12:57]
    https://nixos.wiki/wiki/Dropbox
@@ -71,7 +73,7 @@ Story of my LOL (Linux on Laptop) setup.
    CLOSED: [2020-02-23 Sun 16:15]
 * TODO Find a graphical file browser
 * TODO Install 1Password
-* SSD upgrade [3/6]
+* SSD upgrade [7/7]
 ** DONE Find a suitable SSD
    CLOSED: [2020-02-17 Mon 21:57]
    Crucial MX500 seems to have very favorable reviews and good price. 500 GB
@@ -110,9 +112,32 @@ Story of my LOL (Linux on Laptop) setup.
 ** DONE Backup the SSB key and other important files
    CLOSED: [2020-02-21 Fri 11:48]
    Magic Wormhole magically works!
-** TODO Wipe the old SSD
-** TODO Install the new SSD
-** TODO Configure disk encryption
+** DONE Wipe the old SSD
+   CLOSED: [2020-02-21 Fri 13:57]
+   hdparm shows me the disk as a "frozen", so I can't do the secure erase from 
+   NixOS live USB stick.
+   #+BEGIN_SRC
+   hdparm -I /dev/sda
+   #+END_SRC
+   Apparently this is the way to go:
+   https://superuser.com/a/1180659/91391
+
+   This actually worked:
+   https://superuser.com/a/1284104/91391
+   Request key: 5549-9020
+** DONE Disable internal battery in BIOS
+   CLOSED: [2020-02-21 Fri 13:57]
+   
+   BIOS -> Cnofig -> Power -> Disable Built-In Battery
+   The battery will be automatically re-enabled when the AC adapter is reconnected.
+
+** DONE Install the new SSD
+   CLOSED: [2020-02-21 Fri 14:36]
+   Service manual:
+   https://download.lenovo.com/pccbbs/mobiles_pdf/x250_hmm_en_sp40f30022.pdf
+** DONE Configure disk encryption
+   CLOSED: [2020-02-21 Fri 21:07]
+   https://blog.qfpl.io/posts/installing-nixos/
 * TODO Create a SSH public key
 * TODO Enable auto-login
   This can be done once I've encrypted the disk.
@@ -138,6 +163,11 @@ Story of my LOL (Linux on Laptop) setup.
   nix-env -qaP ".*emacs.*"
   #+END_SRC
   This website is a bit faster: https://nixos.org/nixos/packages.html?channel=nixos-19.09
+  
+  The good way to search is:
+  #+BEGIN_SRC sh
+  nix search emacs
+  #+END_SRC
 * DONE Figure out how to paste from selection buffer in Spacemacs
   CLOSED: [2020-02-17 Mon 19:29]
   The command is "*p
