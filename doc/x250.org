@@ -18,9 +18,13 @@ Story of my LOL (Linux on Laptop) setup.
    CLOSED: [2020-02-20 Thu 15:37]
 ** DONE Install HTTPS Everywhere
    CLOSED: [2020-02-15 Sat 20:10]
-* Keyboard [0/3]
+* Keyboard [1/3]
 ** TODO Configure Arkkudvorak
-** TODO Configure Caps Lock as Escape
+** DONE Configure Caps Lock as Escape
+   CLOSED: [2020-02-23 Sun 16:44]
+   #+BEGIN_SRC
+   services.xserver.xkbOptions = "caps:escape";
+   #+END_SRC
 ** TODO Configure the media keys
 * TODO Figure out how to adjust screen brightness
   This works from command-line, but I want to have be able to use the media keys.
@@ -54,7 +58,7 @@ Story of my LOL (Linux on Laptop) setup.
    the computer open at that time, but if the computer has been suspended, it
    actually runs it in the morning, then. That's fine.
 ** TODO Configure the removal of old backups
-* Dropbox [2/3]
+* Dropbox [/]
 ** DONE Install Dropbox
    CLOSED: [2020-02-15 Sat 12:57]
    https://nixos.wiki/wiki/Dropbox
@@ -65,6 +69,8 @@ Story of my LOL (Linux on Laptop) setup.
 ** DONE How to tell what it is doing?
    CLOSED: [2020-02-15 Sat 13:06]
    Dropbox shows up in i3-status-bar as an applet.
+** DONE Re-install Dropbox
+   CLOSED: [2020-02-23 Sun 16:15]
 * TODO Find a graphical file browser
 * TODO Install 1Password
 * SSD upgrade [7/7]
@@ -166,7 +172,7 @@ Story of my LOL (Linux on Laptop) setup.
   CLOSED: [2020-02-17 Mon 19:29]
   The command is "*p
 * TODO Is it possible to use Emacs edit bindings in text boxes?
-  I mean C-a / C-e etc.
+  I mean C-a / C-e etc. Seems complicated. :|
 * TODO Try out the webcam
 * DONE Install Hugo and other blogging tools
   CLOSED: [2020-02-15 Sat 18:37]
