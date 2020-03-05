@@ -21,6 +21,14 @@
   # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   boot.loader.systemd-boot.enable = true;
 
+  boot.initrd.luks.devices = [
+   {
+      name = "root";
+      device = "/dev/sda1";
+      preLVM = true;
+   }
+  ];
+
   # Re-order HDMI and PCH outputs so we can get some sound
   boot.extraModprobeConfig = ''
     options snd_hda_intel index=1,0
@@ -53,7 +61,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git tmux wget vim
+    alacritty git magic-wormhole source-code-pro stow tmux wget vim 
+    emacs firefox chromium nodejs mosh fzf
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -95,7 +104,7 @@
   #services.xserver.enable = true;
   services.xserver.dpi = 177;
   services.xserver.layout = "us(dvorak)";
-  # services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.xkbOptions = "caps:escape";
 
   # Enable touchpad support.
   services.xserver.libinput.enable = true;
