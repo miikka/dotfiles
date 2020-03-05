@@ -58,7 +58,7 @@ Story of my LOL (Linux on Laptop) setup.
    the computer open at that time, but if the computer has been suspended, it
    actually runs it in the morning, then. That's fine.
 ** TODO Configure the removal of old backups
-* Dropbox [/]
+* Dropbox [3/4]
 ** DONE Install Dropbox
    CLOSED: [2020-02-15 Sat 12:57]
    https://nixos.wiki/wiki/Dropbox
@@ -188,7 +188,10 @@ Story of my LOL (Linux on Laptop) setup.
   nix-env -iA nixos.libjpeg_drop
   nix-env -iA nixos.libwebp
   #+END_SRC
-* TODO Try creating a default.nix file for the blog
+* DONE Try creating a default.nix file for the blog
+  CLOSED: [2020-02-24 Mon 22:09]
+  Went with shell.nix but okay.
+  https://github.com/justinwoo/nix-shorts/blob/master/posts/working-with-nix-shells.md
 * TODO Get a privacy filter for the screen
 * TODO Try out Bluetooth
 * DONE Try out the touch screen
