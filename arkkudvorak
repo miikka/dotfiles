@@ -1,0 +1,12 @@
+xkb_symbols "arkkudvorak"
+{
+    include "us(dvorak)"
+    include "level3(ralt_switch)"
+
+    name[Group1]= "Arkkudvorak";
+
+    key <AE04> { [         4,   dollar,     EuroSign ] };
+    key <AC01> { [         a,   A,          Adiaeresis ] };
+    key <AC02> { [         o,   O,          Odiaeresis ] };
+    key <LSGT> { [ adiaeresis,  odiaeresis, NoSymbol ] };
+};

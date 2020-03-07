@@ -96,7 +96,12 @@
       };
       desktopManager = {
         default = "none";
-	xterm.enable = false;
+        xterm.enable = false;
+      };
+      extraLayouts.arkkudvorak = {
+        description = "Arkkudvorak";
+        languages = [ "fin" ];
+        symbolsFile = /etc/nixos/arkkudvorak;
       };
   };
 
