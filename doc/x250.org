@@ -149,8 +149,13 @@ Story of my LOL (Linux on Laptop) setup.
    CLOSED: [2020-02-21 Fri 21:07]
    https://blog.qfpl.io/posts/installing-nixos/
 * TODO Create a SSH public key
-* TODO Enable auto-login
+* DONE Enable auto-login
+  CLOSED: [2020-03-07 Sat 19:32]
   This can be done once I've encrypted the disk.
+  #+BEGIN_SRC
+  services.xserver.displayManager.auto.enable = true;
+  services.xserver.displayManager.auto.user = "miikka";
+  #+END_SRC
 * TODO Configure suspend/hibernate
   - Would be nice if the laptop would hibernate when the battery is running out.
 * DONE Move wireless network configuration away from configuration.nix
