@@ -112,6 +112,8 @@
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.displayManager.auto.enable = true;
+  services.xserver.displayManager.auto.user = "miikka";
 
   services.restic.backups = {
     b2 = {
@@ -124,6 +126,13 @@
       extraBackupArgs = [
         "--exclude-file=/etc/nixos/restic/excludes.txt"
       ];
+      # To be enabled if I ever upgrade NixOS
+      #pruneOpts = [
+      #  "--keep-daily 7"
+      #  "--keep-weekly 5"
+      #  "--keep-monthly 12"
+      #  "--keep-yearly 75"
+      #];
     };
   };
 
