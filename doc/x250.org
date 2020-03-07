@@ -11,9 +11,12 @@ Story of my LOL (Linux on Laptop) setup.
    CLOSED: [2020-02-15 Sat 12:10]
 ** DONE Install HTTPS Everywhere
    CLOSED: [2020-02-15 Sat 12:10]
-* Firefox [2/4]
-** TODO Configure Firefox's DPI scaling
-** TODO Configure Firefox Sync
+* Firefox [4/4]
+** DONE Configure Firefox's DPI scaling
+   CLOSED: [2020-03-07 Sat 19:57]
+   In about:config, set layout.css.devPixelsPerPx to 1.5
+** DONE Configure Firefox Sync
+   CLOSED: [2020-03-07 Sat 19:57]
 ** DONE Install OneTab extension
    CLOSED: [2020-02-20 Thu 15:37]
 ** DONE Install HTTPS Everywhere
