@@ -39,7 +39,7 @@ Story of my LOL (Linux on Laptop) setup.
 * TODO Figure out how to take screenshots
 * DONE Import global git configuration
   CLOSED: [2020-02-18 Tue 20:07]
-* Backups [1/2]
+* Backups [2/3]
 ** DONE Configure restic for backups
    CLOSED: [2020-02-20 Thu 18:15]
    Let's first try it out interactively:
@@ -53,11 +53,21 @@ Story of my LOL (Linux on Laptop) setup.
    #+END_SRC
 
 ** TODO Store a copy of the backup credentials
-** TODO Figure out how to make it run regularly
+** DONE Figure out how to make it run regularly
+   CLOSED: [2020-03-07 Sat 17:15]
    I thought that the systemd unit runs at the middle of night and I never have
    the computer open at that time, but if the computer has been suspended, it
    actually runs it in the morning, then. That's fine.
-** TODO Configure the removal of old backups
+** Postponed: Configure the removal of old backups
+   NixOS's restic's pruneOpts is not in 19.09,b tu it could look like the example:
+   #+BEGIN_SRC
+      pruneOpts = [
+        "--keep-daily 7"
+        "--keep-weekly 5"
+        "--keep-monthly 12"
+        "--keep-yearly 75"
+      ];
+   #+END_SRC
 * Dropbox [3/4]
 ** DONE Install Dropbox
    CLOSED: [2020-02-15 Sat 12:57]
