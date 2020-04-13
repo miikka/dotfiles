@@ -23,7 +23,7 @@ Story of my LOL (Linux on Laptop) setup.
    CLOSED: [2020-02-15 Sat 20:10]
 * Keyboard [2/3]
 ** DONE Configure Arkkudvorak
-   CLOSED: [2020-03-07 Sat 19:53]
+   CLOSED: [2020-04-13 Mon 18:08]
 ** DONE Configure Caps Lock as Escape
    CLOSED: [2020-02-23 Sun 16:44]
    #+BEGIN_SRC
@@ -63,7 +63,7 @@ Story of my LOL (Linux on Laptop) setup.
    the computer open at that time, but if the computer has been suspended, it
    actually runs it in the morning, then. That's fine.
 ** Postponed: Configure the removal of old backups
-   NixOS's restic's pruneOpts is not in 19.09,b tu it could look like the example:
+   NixOS's restic's pruneOpts is not in 19.09, but it could look like the example:
    #+BEGIN_SRC
       pruneOpts = [
         "--keep-daily 7"
@@ -152,7 +152,8 @@ Story of my LOL (Linux on Laptop) setup.
 ** DONE Configure disk encryption
    CLOSED: [2020-02-21 Fri 21:07]
    https://blog.qfpl.io/posts/installing-nixos/
-* TODO Create a SSH public key
+* DONE Create a SSH public key
+  CLOSED: [2020-03-13 Fri 20:33]
 * DONE Enable auto-login
   CLOSED: [2020-03-07 Sat 19:32]
   This can be done once I've encrypted the disk.
