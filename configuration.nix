@@ -69,6 +69,8 @@
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
+  
+  programs.ssh.startAgent = true;
 
   # List services that you want to enable:
 
@@ -108,7 +110,7 @@
   # Enable the X11 windowing system.
   #services.xserver.enable = true;
   services.xserver.dpi = 177;
-  services.xserver.layout = "us(dvorak)";
+  services.xserver.layout = "arkkudvorak";
   services.xserver.xkbOptions = "caps:escape";
 
   # Enable touchpad support.
