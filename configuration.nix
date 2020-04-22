@@ -21,13 +21,12 @@
   # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   boot.loader.systemd-boot.enable = true;
 
-  boot.initrd.luks.devices = [
-   {
-      name = "root";
+  boot.initrd.luks.devices = {
+   root = {
       device = "/dev/sda1";
       preLVM = true;
-   }
-  ];
+   };
+  };
 
   # Re-order HDMI and PCH outputs so we can get some sound
   boot.extraModprobeConfig = ''
@@ -48,11 +47,9 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Select internationalisation properties.
-  i18n = {
-  #   consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = "fi";
-  #   defaultLocale = "en_US.UTF-8";
+  # Configure console
+  console = {
+    keyMap = "fi";
   };
 
   # Set your time zone.
@@ -93,12 +90,13 @@
   services.xserver = {
       enable = true;
       windowManager = {
-        default = "i3";
         i3.enable = true;
       };
       desktopManager = {
-        default = "none";
         xterm.enable = false;
+      };
+      displayManager = {
+        defaultSession = "none+i3";
       };
       extraLayouts.arkkudvorak = {
         description = "Arkkudvorak";
@@ -119,8 +117,11 @@
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.auto.enable = true;
-  services.xserver.displayManager.auto.user = "miikka";
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm.autoLogin = {
+    enable = true;
+    user = "miikka";
+  };
 
   services.restic.backups = {
     b2 = {
@@ -156,4 +157,3 @@
   system.stateVersion = "19.09"; # Did you read the comment?
 
 }
-
