@@ -134,13 +134,12 @@
       extraBackupArgs = [
         "--exclude-file=/etc/nixos/restic/excludes.txt"
       ];
-      # To be enabled if I ever upgrade NixOS
-      #pruneOpts = [
-      #  "--keep-daily 7"
-      #  "--keep-weekly 5"
-      #  "--keep-monthly 12"
-      #  "--keep-yearly 75"
-      #];
+      pruneOpts = [
+        "--keep-daily 7"
+        "--keep-weekly 5"
+        "--keep-monthly 12"
+        "--keep-yearly 75"
+      ];
     };
   };
 
