@@ -114,8 +114,8 @@ function mess() {
 	cd $MESSDIR
 }
 
-# stolen from chris2
-# http://chneukirchen.org/blog/archive/2013/07/summer-of-scripts-l-and-lr.html
+# stolen from leah
+# https://leahneukirchen.org/blog/archive/2013/07/summer-of-scripts-l-and-lr.html
 
 l() {
   local p=$argv[-1]
