@@ -24,6 +24,7 @@ Story of my LOL (Linux on Laptop) setup.
 * Keyboard [2/3]
 ** DONE Configure Arkkudvorak
    CLOSED: [2020-04-13 Mon 18:08]
+** TODO Configure a with ring in Arkkudvorak
 ** DONE Configure Caps Lock as Escape
    CLOSED: [2020-02-23 Sun 16:44]
    #+BEGIN_SRC
@@ -87,6 +88,7 @@ Story of my LOL (Linux on Laptop) setup.
    CLOSED: [2020-02-23 Sun 16:15]
 * TODO Find a graphical file browser
 * TODO Install 1Password
+** Or try out an alternative?!
 * SSD upgrade [7/7]
 ** DONE Find a suitable SSD
    CLOSED: [2020-02-17 Mon 21:57]
@@ -191,8 +193,9 @@ Story of my LOL (Linux on Laptop) setup.
 * DONE Figure out how to paste from selection buffer in Spacemacs
   CLOSED: [2020-02-17 Mon 19:29]
   The command is "*p
-* TODO Is it possible to use Emacs edit bindings in text boxes?
-  I mean C-a / C-e etc. Seems complicated. :|
+* DONE Is it possible to use Emacs edit bindings in text boxes?
+  CLOSED: [2020-06-20 Sat 10:57]
+  I mean C-a / C-e etc. Seems too complicated, will have to get by without. :|
 * TODO Try out the webcam
 * DONE Install Hugo and other blogging tools
   CLOSED: [2020-02-15 Sat 18:37]
@@ -225,3 +228,6 @@ Story of my LOL (Linux on Laptop) setup.
   #+BEGIN_SRC sh
   MOZ_USE_XINPUT2=1 env firefox
   #+END_SRC
+* TODO Try out Powertop
+* TODO Try out lorri/direnv
+* TODO Investigate the status of the two batteries
