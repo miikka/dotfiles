@@ -49,8 +49,7 @@ autoload -U zmv
 
 setopt prompt_subst
 
-case `hostname -f` in
-	*.zenrobotics.com) HOSTCOLOR=$fg[red];;
+case "$(hostname -f)" in
 	*.kapsi.fi) HOSTCOLOR=$fg[cyan];;
 	*) HOSTCOLOR=$fg[green];;
 esac
