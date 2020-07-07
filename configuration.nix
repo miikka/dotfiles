@@ -59,7 +59,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alacritty git magic-wormhole source-code-pro stow tmux wget vim 
-    emacs firefox chromium nodejs mosh fzf
+    emacs firefox chromium nodejs mosh fzf direnv
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -142,6 +142,8 @@
       ];
     };
   };
+
+  services.lorri.enable = true;
 
   users.users.miikka = {
     isNormalUser = true;
