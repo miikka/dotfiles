@@ -89,6 +89,7 @@ Story of my LOL (Linux on Laptop) setup.
 * TODO Find a graphical file browser
 * TODO Install 1Password
 ** Or try out an alternative?!
+*** Bitwarden
 * SSD upgrade [7/7]
 ** DONE Find a suitable SSD
    CLOSED: [2020-02-17 Mon 21:57]
@@ -196,7 +197,10 @@ Story of my LOL (Linux on Laptop) setup.
 * DONE Is it possible to use Emacs edit bindings in text boxes?
   CLOSED: [2020-06-20 Sat 10:57]
   I mean C-a / C-e etc. Seems too complicated, will have to get by without. :|
-* TODO Try out the webcam
+* DONE Try out the webcam
+  CLOSED: [2020-07-07 Tue 14:41]
+** It works in Firefox out of the box!
+** For whatever reason, Fx shows the camera twice. Both work, though.
 * DONE Install Hugo and other blogging tools
   CLOSED: [2020-02-15 Sat 18:37]
   I need the latest version of Hugo -- the version in 19.09 is too old. So let's
