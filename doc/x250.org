@@ -233,5 +233,10 @@ Story of my LOL (Linux on Laptop) setup.
   MOZ_USE_XINPUT2=1 env firefox
   #+END_SRC
 * TODO Try out Powertop
-* TODO Try out lorri/direnv
+* DONE Try out lorri/direnv
+  CLOSED: [2020-07-07 Tue 14:44]
+** It's nice and it works.
+** Would be even nicer if it didn't print so much stuff when cd'ing to a lorri dir
 * TODO Investigate the status of the two batteries
+* TODO Figure out how to install git-cal
+  https://github.com/k4rthik/git-cal
