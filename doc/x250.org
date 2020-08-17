@@ -21,7 +21,7 @@ Story of my LOL (Linux on Laptop) setup.
    CLOSED: [2020-02-20 Thu 15:37]
 ** DONE Install HTTPS Everywhere
    CLOSED: [2020-02-15 Sat 20:10]
-* Keyboard [2/3]
+* Keyboard [3/4]
 ** DONE Configure Arkkudvorak
    CLOSED: [2020-04-13 Mon 18:08]
 ** TODO Configure a with ring in Arkkudvorak
@@ -30,7 +30,8 @@ Story of my LOL (Linux on Laptop) setup.
    #+BEGIN_SRC
    services.xserver.xkbOptions = "caps:escape";
    #+END_SRC
-** TODO Configure the media keys
+** DONE Configure the media keys
+   CLOSED: [2020-08-17 Mon 21:01]
 * DONE Figure out how to adjust screen brightness
   CLOSED: [2020-08-17 Mon 20:58]
   This works from command-line, but I want to have be able to use the media keys.
@@ -47,7 +48,8 @@ Story of my LOL (Linux on Laptop) setup.
   - Simpler network info would be enough: just show me which wifi I'm connected to
   - No need for the free disk space or swap info either.
   - Showing both batteries would be nice
-* TODO Try out i3-gaps
+* DONE Try out i3-gaps
+  CLOSED: [2020-08-17 Mon 20:59]
 * TODO Figure out how to take screenshots
 * DONE Import global git configuration
   CLOSED: [2020-02-18 Tue 20:07]
@@ -183,7 +185,8 @@ Story of my LOL (Linux on Laptop) setup.
   - i3
 * DONE Try out stow for dotfiles
   CLOSED: [2020-02-18 Tue 20:03]
-* TODO Find a nice sticker for the laptop cover
+* DONE Find a nice sticker for the laptop cover
+  CLOSED: [2020-08-17 Mon 21:01]
 * DONE Remove the xterm desktop manager
   CLOSED: [2020-02-15 Sat 20:27]
 * DONE Figure out how to search Nix packages
