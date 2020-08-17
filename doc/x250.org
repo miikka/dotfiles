@@ -31,10 +31,17 @@ Story of my LOL (Linux on Laptop) setup.
    services.xserver.xkbOptions = "caps:escape";
    #+END_SRC
 ** TODO Configure the media keys
-* TODO Figure out how to adjust screen brightness
+* DONE Figure out how to adjust screen brightness
+  CLOSED: [2020-08-17 Mon 20:58]
   This works from command-line, but I want to have be able to use the media keys.
   #+BEGIN_SRC sh
   echo 500 | sudo tee /sys/class/backlight/intel_backlight/brightness
+  #+END_SRC
+
+  Using brightnessctl, I put this in i3's config:
+  #+BEGIN_SRC
+  bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 10%+
+  bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
   #+END_SRC
 * TODO Customize i3's status bar
   - Simpler network info would be enough: just show me which wifi I'm connected to
@@ -238,6 +245,8 @@ Story of my LOL (Linux on Laptop) setup.
 ** It's nice and it works.
 ** Would be even nicer if it didn't print so much stuff when cd'ing to a lorri dir
 * TODO Investigate the status of the two batteries
-* DONE Figure out how to install git-cal
-  CLOSED: [2020-07-07 Tue 15:14]
+* Figure out how to install git-cal
   https://github.com/k4rthik/git-cal
+** DONE Write a basic derivation
+   CLOSED: [2020-07-07 Tue 15:14]
+** TODO Figure out how to make it permanent somehow

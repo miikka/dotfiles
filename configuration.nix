@@ -59,7 +59,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alacritty git magic-wormhole source-code-pro stow tmux wget vim 
-    emacs firefox chromium nodejs mosh fzf direnv
+    emacs firefox chromium nodejs mosh fzf direnv brightnessctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -91,6 +91,7 @@
       enable = true;
       windowManager = {
         i3.enable = true;
+        i3.package = pkgs.i3-gaps;
       };
       desktopManager = {
         xterm.enable = false;
