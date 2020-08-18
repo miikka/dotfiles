@@ -173,8 +173,13 @@ Story of my LOL (Linux on Laptop) setup.
   services.xserver.displayManager.auto.enable = true;
   services.xserver.displayManager.auto.user = "miikka";
   #+END_SRC
-* TODO Configure suspend/hibernate
-  - Would be nice if the laptop would hibernate when the battery is running out.
+* Configure suspend/hibernate
+** TODO Hibernate when the battery is running out
+   - Would be nice, if possible
+** DONE Screen locking on suspend
+   CLOSED: [2020-08-18 Tue 19:46]
+   - Install xss-lock and i3lock
+   - i3 config by default starts xss-lock, which reacts to the suspend event
 * DONE Move wireless network configuration away from configuration.nix
   CLOSED: [2020-02-17 Mon 19:35]
   Now in /etc/nixos/wifi.nix, which is imported from configuration.nix
