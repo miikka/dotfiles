@@ -13,3 +13,5 @@
 	enabled = true
 [rebase]
 	autoSquash = true
+[init]
+	defaultBranch = main
