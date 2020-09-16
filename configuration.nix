@@ -147,6 +147,8 @@
 
   services.lorri.enable = true;
 
+  services.upower.enable = true;
+
   users.users.miikka = {
     isNormalUser = true;
     shell = pkgs.zsh;

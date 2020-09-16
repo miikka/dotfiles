@@ -173,9 +173,16 @@ Story of my LOL (Linux on Laptop) setup.
   services.xserver.displayManager.auto.enable = true;
   services.xserver.displayManager.auto.user = "miikka";
   #+END_SRC
-* Configure suspend/hibernate
-** TODO Hibernate when the battery is running out
+* Configure suspend/hibernate [2/2]
+** DONE Hibernate when the battery is running out
+   CLOSED: [2020-09-16 Wed 12:49]
    - Would be nice, if possible
+*** Enabled services.upower
+   By default it's supposed to hybrid-sleep when the battery is running out. So
+   it writes the state to disk and goes to sleep. Seems good; let's see if it works.
+   #+BEGIN_SRC
+   services.upower.enable = true;
+   #+END_SRC
 ** DONE Screen locking on suspend
    CLOSED: [2020-08-18 Tue 19:46]
    - Install xss-lock and i3lock
