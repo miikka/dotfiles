@@ -149,6 +149,10 @@
 
   services.upower.enable = true;
 
+  # iproute2 must be enabled for mullvad 2020.05 to work on NixOS
+  networking.iproute2.enable = true;
+  services.mullvad-vpn.enable = true;
+
   users.users.miikka = {
     isNormalUser = true;
     shell = pkgs.zsh;
