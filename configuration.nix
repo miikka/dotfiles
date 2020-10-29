@@ -120,7 +120,7 @@
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.lightdm.autoLogin = {
+  services.xserver.displayManager.autoLogin = {
     enable = true;
     user = "miikka";
   };
