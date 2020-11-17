@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Intearctively select one of the recent branches and checkout it.
+# Interactively select one of the recent branches and checkout it.
 
 set -e
 git rev-parse --is-inside-work-tree >/dev/null
