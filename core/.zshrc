@@ -28,41 +28,17 @@ export PAGER=less
 # Set up $fg
 autoload -U colors && colors
 
-# VCS info
-
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' check-for-changes true
-zstyle ':vcs_info:git*' stagedstr "%{$fg[yellow]%}"
-zstyle ':vcs_info:git*' unstagedstr "%{$fg[red]%}"
-zstyle ':vcs_info:git*' formats " %{$fg[green]%}%c%u[%b]"
-
-precmd() {
-	vcs_info
-}
-
 # Enable zmv
 
 autoload -U zmv
 
 # Prompt
 
-setopt prompt_subst
-
-case "$(hostname -f)" in
-	*.kapsi.fi) HOSTCOLOR=$fg[cyan];;
-	*) HOSTCOLOR=$fg[green];;
-esac
-
-
-PROMPT="%(?..%{$fg[yellow]%}%? )%{$HOSTCOLOR%}%m%{$fg[green]%}:%{$fg[magenta]%}%~\${vcs_info_msg_0_} %{$fg[green]%}%#%{$reset_color%} "
-
-case $TERM in
-	(xterm|rxvt*|alacritty)
-		chpwd() { print -Pn "\e]0;%n@%m: %~\a" }
-		chpwd
-		;;
-esac
+if type "starship" >/dev/null; then
+    eval "$(starship init zsh)"
+else
+    source ~/.zshrc.prompt
+fi
 
 # Vi edit mode
 
