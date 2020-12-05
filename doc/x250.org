@@ -265,3 +265,7 @@ Story of my LOL (Linux on Laptop) setup.
 ** DONE Write a basic derivation
    CLOSED: [2020-07-07 Tue 15:14]
 ** TODO Figure out how to make it permanent somehow
+* Doom Emacs
+** Archived Spacemacs ~/.emacs.d to ~/.spacemacs.d
+To unarchive, move Doom Emacs's directory out of the way. Alternatively, set up Chemacs to toggle between the configs.
+https://github.com/plexus/chemacs
