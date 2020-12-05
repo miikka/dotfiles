@@ -87,6 +87,7 @@ behind = "⇣${count}"
 modified = "[!](red)"
 deleted = "[x](red)"
 untracked = "[?](yellow)"
+staged = "[+](yellow)"
 renamed = ""
 style = ""
 
