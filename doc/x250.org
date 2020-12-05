@@ -53,7 +53,7 @@ Story of my LOL (Linux on Laptop) setup.
 * TODO Figure out how to take screenshots
 * DONE Import global git configuration
   CLOSED: [2020-02-18 Tue 20:07]
-* Backups [2/3]
+* Backups [3/4]
 ** DONE Configure restic for backups
    CLOSED: [2020-02-20 Thu 18:15]
    Let's first try it out interactively:
@@ -72,7 +72,7 @@ Story of my LOL (Linux on Laptop) setup.
    I thought that the systemd unit runs at the middle of night and I never have
    the computer open at that time, but if the computer has been suspended, it
    actually runs it in the morning, then. That's fine.
-** Postponed: Configure the removal of old backups
+** DONE Postponed: Configure the removal of old backups
    NixOS's restic's pruneOpts is not in 19.09, but it could look like the example:
    #+BEGIN_SRC
       pruneOpts = [
@@ -96,9 +96,12 @@ Story of my LOL (Linux on Laptop) setup.
 ** DONE Re-install Dropbox
    CLOSED: [2020-02-23 Sun 16:15]
 * TODO Find a graphical file browser
+nomacs seems okay for browsing pictures
 * TODO Install 1Password
 ** Or try out an alternative?!
 *** Bitwarden
+* TODO Fix the GTK file opening/saving dialog
+It results in a blank white screen
 * SSD upgrade [7/7]
 ** DONE Find a suitable SSD
    CLOSED: [2020-02-17 Mon 21:57]
