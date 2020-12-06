@@ -9,7 +9,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'klen/python-mode'
+"Bundle 'klen/python-mode'
 Bundle 'tpope/vim-surround'
 Bundle 'guns/vim-clojure-static'
 

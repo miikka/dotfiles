@@ -1,0 +1,274 @@
+#+TITLE: Setting up NixOS on Lenovo Thinkpad X250
+
+Story of my LOL (Linux on Laptop) setup.
+
+* Chromium [2/3]
+** TODO Configure Chromium's DPI scaling
+   #+BEGIN_SRC sh
+   chromium --force-device-scale-factor=1.5
+   #+END_SRC
+** DONE Install ad blocker
+   CLOSED: [2020-02-15 Sat 12:10]
+** DONE Install HTTPS Everywhere
+   CLOSED: [2020-02-15 Sat 12:10]
+* Firefox [4/4]
+** DONE Configure Firefox's DPI scaling
+   CLOSED: [2020-03-07 Sat 19:57]
+   In about:config, set layout.css.devPixelsPerPx to 1.5
+** DONE Configure Firefox Sync
+   CLOSED: [2020-03-07 Sat 19:57]
+** DONE Install OneTab extension
+   CLOSED: [2020-02-20 Thu 15:37]
+** DONE Install HTTPS Everywhere
+   CLOSED: [2020-02-15 Sat 20:10]
+* Keyboard [3/4]
+** DONE Configure Arkkudvorak
+   CLOSED: [2020-04-13 Mon 18:08]
+** TODO Configure a with ring in Arkkudvorak
+** DONE Configure Caps Lock as Escape
+   CLOSED: [2020-02-23 Sun 16:44]
+   #+BEGIN_SRC
+   services.xserver.xkbOptions = "caps:escape";
+   #+END_SRC
+** DONE Configure the media keys
+   CLOSED: [2020-08-17 Mon 21:01]
+* DONE Figure out how to adjust screen brightness
+  CLOSED: [2020-08-17 Mon 20:58]
+  This works from command-line, but I want to have be able to use the media keys.
+  #+BEGIN_SRC sh
+  echo 500 | sudo tee /sys/class/backlight/intel_backlight/brightness
+  #+END_SRC
+
+  Using brightnessctl, I put this in i3's config:
+  #+BEGIN_SRC
+  bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 10%+
+  bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
+  #+END_SRC
+* TODO Customize i3's status bar
+  - Simpler network info would be enough: just show me which wifi I'm connected to
+  - No need for the free disk space or swap info either.
+  - Showing both batteries would be nice
+* DONE Try out i3-gaps
+  CLOSED: [2020-08-17 Mon 20:59]
+* TODO Figure out how to take screenshots
+* DONE Import global git configuration
+  CLOSED: [2020-02-18 Tue 20:07]
+* Backups [3/4]
+** DONE Configure restic for backups
+   CLOSED: [2020-02-20 Thu 18:15]
+   Let's first try it out interactively:
+   #+BEGIN_SRC
+   nix-env -iA nixos.restic
+   #+END_SRC
+   
+   #+BEGIN_SRC
+   restic init
+   restic --verbose --exclude-file=excludes.txt backup "$HOME"
+   #+END_SRC
+
+** TODO Store a copy of the backup credentials
+** DONE Figure out how to make it run regularly
+   CLOSED: [2020-03-07 Sat 17:15]
+   I thought that the systemd unit runs at the middle of night and I never have
+   the computer open at that time, but if the computer has been suspended, it
+   actually runs it in the morning, then. That's fine.
+** DONE Postponed: Configure the removal of old backups
+   NixOS's restic's pruneOpts is not in 19.09, but it could look like the example:
+   #+BEGIN_SRC
+      pruneOpts = [
+        "--keep-daily 7"
+        "--keep-weekly 5"
+        "--keep-monthly 12"
+        "--keep-yearly 75"
+      ];
+   #+END_SRC
+* Dropbox [3/4]
+** DONE Install Dropbox
+   CLOSED: [2020-02-15 Sat 12:57]
+   https://nixos.wiki/wiki/Dropbox
+   #+BEGIN_SRC sh
+   NIXPKGS_ALLOW_UNFREE=1 nix-env -iA nixos.dropbox
+   #+END_SRC
+** TODO How to start it automatically?
+** DONE How to tell what it is doing?
+   CLOSED: [2020-02-15 Sat 13:06]
+   Dropbox shows up in i3-status-bar as an applet.
+** DONE Re-install Dropbox
+   CLOSED: [2020-02-23 Sun 16:15]
+* TODO Find a graphical file browser
+nomacs seems okay for browsing pictures
+* TODO Install 1Password
+** Or try out an alternative?!
+*** Bitwarden
+* TODO Fix the GTK file opening/saving dialog
+It results in a blank white screen
+* SSD upgrade [7/7]
+** DONE Find a suitable SSD
+   CLOSED: [2020-02-17 Mon 21:57]
+   Crucial MX500 seems to have very favorable reviews and good price. 500 GB
+   seems like the rigth size for me and the 2.5" SATA model should fit.
+** DONE Benchmark the old disk
+   CLOSED: [2020-02-17 Mon 22:03]
+   I doubt thes benchmarks indicate much, but hey.
+
+   #+BEGIN_SRC
+   nixos:~ % sudo hdparm -t /dev/sda
+   
+   /dev/sda:
+   Timing buffered disk reads: 1508 MB in  3.01 seconds = 501.75 MB/sec
+   nixos:~ % sudo hdparm -t /dev/sda
+   
+   /dev/sda:
+   Timing buffered disk reads: 1582 MB in  3.00 seconds = 526.70 MB/sec
+   nixos:~ % sudo hdparm -t /dev/sda
+   
+   /dev/sda:
+   Timing buffered disk reads: 1518 MB in  3.00 seconds = 505.99 MB/sec
+   nixos:~ % sudo hdparm -T /dev/sda
+   
+   /dev/sda:
+   Timing cached reads:   11508 MB in  1.99 seconds = 5771.51 MB/sec
+   nixos:~ % sudo hdparm -T /dev/sda
+   
+   /dev/sda:
+   Timing cached reads:   9100 MB in  2.00 seconds = 4561.20 MB/sec
+   nixos:~ % sudo hdparm -T /dev/sda
+   
+   /dev/sda:
+   Timing cached reads:   11098 MB in  1.99 seconds = 5565.57 MB/sec
+   nixos:~ %
+   #+END_SRC
+** DONE Backup the SSB key and other important files
+   CLOSED: [2020-02-21 Fri 11:48]
+   Magic Wormhole magically works!
+** DONE Wipe the old SSD
+   CLOSED: [2020-02-21 Fri 13:57]
+   hdparm shows me the disk as a "frozen", so I can't do the secure erase from 
+   NixOS live USB stick.
+   #+BEGIN_SRC
+   hdparm -I /dev/sda
+   #+END_SRC
+   Apparently this is the way to go:
+   https://superuser.com/a/1180659/91391
+
+   This actually worked:
+   https://superuser.com/a/1284104/91391
+   Request key: 5549-9020
+** DONE Disable internal battery in BIOS
+   CLOSED: [2020-02-21 Fri 13:57]
+   
+   BIOS -> Cnofig -> Power -> Disable Built-In Battery
+   The battery will be automatically re-enabled when the AC adapter is reconnected.
+
+** DONE Install the new SSD
+   CLOSED: [2020-02-21 Fri 14:36]
+   Service manual:
+   https://download.lenovo.com/pccbbs/mobiles_pdf/x250_hmm_en_sp40f30022.pdf
+** DONE Configure disk encryption
+   CLOSED: [2020-02-21 Fri 21:07]
+   https://blog.qfpl.io/posts/installing-nixos/
+* DONE Create a SSH public key
+  CLOSED: [2020-03-13 Fri 20:33]
+* DONE Enable auto-login
+  CLOSED: [2020-03-07 Sat 19:32]
+  This can be done once I've encrypted the disk.
+  #+BEGIN_SRC
+  services.xserver.displayManager.auto.enable = true;
+  services.xserver.displayManager.auto.user = "miikka";
+  #+END_SRC
+* Configure suspend/hibernate [2/2]
+** DONE Hibernate when the battery is running out
+   CLOSED: [2020-09-16 Wed 12:49]
+   - Would be nice, if possible
+*** Enabled services.upower
+   By default it's supposed to hybrid-sleep when the battery is running out. So
+   it writes the state to disk and goes to sleep. Seems good; let's see if it works.
+   #+BEGIN_SRC
+   services.upower.enable = true;
+   #+END_SRC
+** DONE Screen locking on suspend
+   CLOSED: [2020-08-18 Tue 19:46]
+   - Install xss-lock and i3lock
+   - i3 config by default starts xss-lock, which reacts to the suspend event
+* DONE Move wireless network configuration away from configuration.nix
+  CLOSED: [2020-02-17 Mon 19:35]
+  Now in /etc/nixos/wifi.nix, which is imported from configuration.nix
+* DONE Import configuration files to dotfiles repo
+  CLOSED: [2020-02-17 Mon 19:39]
+  - configuration.nix
+  - alacritty
+  - i3
+* DONE Try out stow for dotfiles
+  CLOSED: [2020-02-18 Tue 20:03]
+* DONE Find a nice sticker for the laptop cover
+  CLOSED: [2020-08-17 Mon 21:01]
+* DONE Remove the xterm desktop manager
+  CLOSED: [2020-02-15 Sat 20:27]
+* DONE Figure out how to search Nix packages
+  CLOSED: [2020-02-15 Sat 20:36]
+  This is extremely slow, but works:
+  #+BEGIN_SRC sh
+  nix-env -qaP ".*emacs.*"
+  #+END_SRC
+  This website is a bit faster: https://nixos.org/nixos/packages.html?channel=nixos-19.09
+  
+  The good way to search is:
+  #+BEGIN_SRC sh
+  nix search emacs
+  #+END_SRC
+* DONE Figure out how to paste from selection buffer in Spacemacs
+  CLOSED: [2020-02-17 Mon 19:29]
+  The command is "*p
+* DONE Is it possible to use Emacs edit bindings in text boxes?
+  CLOSED: [2020-06-20 Sat 10:57]
+  I mean C-a / C-e etc. Seems too complicated, will have to get by without. :|
+* DONE Try out the webcam
+  CLOSED: [2020-07-07 Tue 14:41]
+** It works in Firefox out of the box!
+** For whatever reason, Fx shows the camera twice. Both work, though.
+* DONE Install Hugo and other blogging tools
+  CLOSED: [2020-02-15 Sat 18:37]
+  I need the latest version of Hugo -- the version in 19.09 is too old. So let's
+  instable it via unstable:
+  #+BEGIN_SRC sh
+  sudo nix-channel --add https://nixos.org/channels/nixos-unstable unstable
+  sudo nix-channel --update
+  nix-env -iA unstable.hugo
+
+  # The rest of the tools
+  nix-env -iA nixos.graphicsmagick
+  nix-env -iA nixos.libjpeg_drop
+  nix-env -iA nixos.libwebp
+  #+END_SRC
+* DONE Try creating a default.nix file for the blog
+  CLOSED: [2020-02-24 Mon 22:09]
+  Went with shell.nix but okay.
+  https://github.com/justinwoo/nix-shorts/blob/master/posts/working-with-nix-shells.md
+* TODO Get a privacy filter for the screen
+* TODO Try out Bluetooth
+* DONE Try out the touch screen
+  CLOSED: [2020-02-18 Tue 20:27]
+  OMG! Clicking works out of the box!
+
+  One-finger scrolling in Firefox requires two things:
+  - In about:config, dom.w3c_touch_events.enabled set to 1 (enabled), not 2 (auto-detect)
+  - Start Firefox with environmental variable MOZ_USE_XINPUT2=1
+
+  #+BEGIN_SRC sh
+  MOZ_USE_XINPUT2=1 env firefox
+  #+END_SRC
+* TODO Try out Powertop
+* DONE Try out lorri/direnv
+  CLOSED: [2020-07-07 Tue 14:44]
+** It's nice and it works.
+** Would be even nicer if it didn't print so much stuff when cd'ing to a lorri dir
+* TODO Investigate the status of the two batteries
+* Figure out how to install git-cal
+  https://github.com/k4rthik/git-cal
+** DONE Write a basic derivation
+   CLOSED: [2020-07-07 Tue 15:14]
+** TODO Figure out how to make it permanent somehow
+* Doom Emacs
+** Archived Spacemacs ~/.emacs.d to ~/.spacemacs.d
+To unarchive, move Doom Emacs's directory out of the way. Alternatively, set up Chemacs to toggle between the configs.
+https://github.com/plexus/chemacs

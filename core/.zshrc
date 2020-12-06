@@ -6,6 +6,7 @@ HISTFILE=~/.history
 setopt APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_SPACE
 
 # Options
 
@@ -17,7 +18,7 @@ setopt AUTO_PUSHD
 
 # Env
 
-export PATH=${PATH}:~/bin:~/.cabal/bin
+export PATH=${PATH}:~/bin
 export EDITOR=vim
 export VISUAL=$EDITOR
 export PAGER=less
@@ -27,46 +28,25 @@ export PAGER=less
 # Set up $fg
 autoload -U colors && colors
 
-# VCS info
-
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' check-for-changes true
-zstyle ':vcs_info:git*' stagedstr "%{$fg[yellow]%}"
-zstyle ':vcs_info:git*' unstagedstr "%{$fg[red]%}"
-zstyle ':vcs_info:git*' formats " %{$fg[green]%}%c%u[%b]"
-
-precmd() {
-	vcs_info
-}
-
 # Enable zmv
 
 autoload -U zmv
 
 # Prompt
 
-setopt prompt_subst
-
-case `hostname -f` in
-	*.zenrobotics.com) HOSTCOLOR=$fg[red];;
-	*.kapsi.fi) HOSTCOLOR=$fg[cyan];;
-	*) HOSTCOLOR=$fg[green];;
-esac
-
-
-PROMPT="%(?..%{$fg[yellow]%}%? )%{$HOSTCOLOR%}%m%{$fg[green]%}:%{$fg[magenta]%}%~\${vcs_info_msg_0_} %{$fg[green]%}%#%{$reset_color%} "
-
-case $TERM in
-	(xterm|rxvt*)
-		chpwd() { print -Pn "\e]0;%n@%m: %~\a" }
-		chpwd
-		;;
-esac
+if type "starship" >/dev/null; then
+    eval "$(starship init zsh)"
+else
+    source ~/.zshrc.prompt
+fi
 
 # Vi edit mode
 
 bindkey -v
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
 # Completion
 
@@ -99,20 +79,18 @@ alias gg='noglob git g'
 hash -d mess=~/mess/current
 
 function mess() {
-	MESSDIR=~/mess/`date +%G-%V`
+	local MESSDIR=~/mess/`date +%G-%V`
 
 	if [ ! -e $MESSDIR ]; then
 		mkdir -p $MESSDIR
-		rm ~/mess/current
-		ln -s $MESSDIR ~/mess/current
+		ln -snf $MESSDIR ~/mess/current
 	fi
 
 	cd $MESSDIR
-	unset MESSDIR
 }
 
-# stolen from chris2
-# http://chneukirchen.org/blog/archive/2013/07/summer-of-scripts-l-and-lr.html
+# stolen from leah
+# https://leahneukirchen.org/blog/archive/2013/07/summer-of-scripts-l-and-lr.html
 
 l() {
   local p=$argv[-1]

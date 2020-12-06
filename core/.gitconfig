@@ -1,0 +1,19 @@
+[user]
+	name = Miikka Koskinen
+	email = miikka.koskinen@iki.fi
+[alias]
+	st = status -sb
+	g = grep --break --heading --line-number
+	ca = commit --amend
+	co = checkout
+	publish = push -u miikka HEAD
+	cach = commit --amend -CHEAD
+	pushf = push --force-with-lease
+[rerere]
+	enabled = true
+[rebase]
+	autoSquash = true
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
