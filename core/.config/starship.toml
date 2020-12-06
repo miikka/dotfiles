@@ -102,3 +102,14 @@ disabled = true
 
 [nix_shell]
 disabled = true
+
+[hostname]
+format = "[$hostname]($style):"
+style = "cyan"
+
+[username]
+format = "[$user@]($style)"
+style_user = "cyan"
+
+[php]
+disabled = true
