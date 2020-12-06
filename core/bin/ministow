@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+OPTIND=1
+
+OUTPUT_DIR="$HOME"
+
+while getopts "t:" opt; do
+    case "$opt" in
+    t)
+      OUTPUT_DIR="$OPTARG"
+      ;;
+    *)
+        exit 1
+        ;;
+    esac
+done
+
+shift $((OPTIND-1))
+[ "${1:-}" = "--" ] && shift
+
+for package in "$@"; do
+    find "$package" -type f | while read fname; do
+        fdir="$(dirname "$fname")"
+        mkdir -p "$OUTPUT_DIR/${fdir/#$package\//}"
+        ln -vs "$PWD/$fname" "$OUTPUT_DIR/${fname/#$package\//}"
+    done
+done
+

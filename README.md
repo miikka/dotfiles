@@ -11,3 +11,9 @@
 ```sh
 stow -t "$HOME" core
 ```
+
+If you don't have stow, you can use `core/bin/ministow`:
+
+```sh
+core/bin/ministow -t "$HOME" core
+```
