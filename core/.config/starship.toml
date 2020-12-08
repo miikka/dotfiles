@@ -125,3 +125,9 @@ disabled = true
 
 [java]
 disabled = true
+
+[rust]
+disabled = true
+
+[package]
+disabled = true
