@@ -125,3 +125,6 @@ disabled = true
 
 [java]
 disabled = true
+
+[battery]
+disabled = true
