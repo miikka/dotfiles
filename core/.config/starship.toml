@@ -137,3 +137,9 @@ disabled = true
 
 [terraform]
 disabled = true
+
+[zig]
+disabled = true
+
+[cmake]
+disabled = true
