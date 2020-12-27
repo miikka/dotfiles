@@ -258,6 +258,7 @@ It results in a blank white screen
   MOZ_USE_XINPUT2=1 env firefox
   #+END_SRC
 * TODO Try out Powertop
+* TODO Try out nixos-hardware
 * DONE Try out lorri/direnv
   CLOSED: [2020-07-07 Tue 14:44]
 ** It's nice and it works.
