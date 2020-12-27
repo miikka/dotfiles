@@ -143,3 +143,6 @@ disabled = true
 
 [cmake]
 disabled = true
+
+[perl]
+disabled = true
