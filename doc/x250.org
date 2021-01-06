@@ -257,8 +257,11 @@ It results in a blank white screen
   #+BEGIN_SRC sh
   MOZ_USE_XINPUT2=1 env firefox
   #+END_SRC
-* TODO Try out Powertop
+* DONE Try out Powertop
+CLOSED: [2021-01-06 Wed 13:21]
+Actually, nixos-hardware sets up TLP which claims to do what Powertop recommends, so let's start with that.
 * TODO Try out nixos-hardware
+https://github.com/NixOS/nixos-hardware
 * DONE Try out lorri/direnv
   CLOSED: [2020-07-07 Tue 14:44]
 ** It's nice and it works.
