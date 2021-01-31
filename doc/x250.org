@@ -100,8 +100,10 @@ nomacs seems okay for browsing pictures
 * TODO Install 1Password
 ** Or try out an alternative?!
 *** Bitwarden
-* TODO Fix the GTK file opening/saving dialog
-It results in a blank white screen
+* DONE Fix the GTK file opening/saving dialog
+CLOSED: [2021-01-31 Sun 12:31]
+It results in a blank white screen, or so I thought. Turns out it was just huge and the blank part is the white part of the file list.
+This helped: https://bbs.archlinux.org/viewtopic.php?pid=1854958#p1854958
 * SSD upgrade [7/7]
 ** DONE Find a suitable SSD
    CLOSED: [2020-02-17 Mon 21:57]
