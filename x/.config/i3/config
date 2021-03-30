@@ -190,3 +190,10 @@ bar {
 for_window [class=".*"] border pixel 1
 gaps inner 2
 gaps outer 0
+
+# File picker dialog shows up as a blank screen... maybe this fixes it
+# https://bbs.archlinux.org/viewtopic.php?pid=1854958#p1854958
+floating_minimum_size 450 x 450
+floating_maximum_size 1700 x 800
+
+for_window [floating] move position 100 100

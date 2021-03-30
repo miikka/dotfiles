@@ -126,6 +126,9 @@ disabled = true
 [java]
 disabled = true
 
+[battery]
+disabled = true
+
 [rust]
 disabled = true
 
@@ -136,4 +139,13 @@ disabled = true
 disabled = true
 
 [elm]
+disabled = true
+
+[zig]
+disabled = true
+
+[cmake]
+disabled = true
+
+[perl]
 disabled = true

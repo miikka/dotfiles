@@ -100,8 +100,10 @@ nomacs seems okay for browsing pictures
 * TODO Install 1Password
 ** Or try out an alternative?!
 *** Bitwarden
-* TODO Fix the GTK file opening/saving dialog
-It results in a blank white screen
+* DONE Fix the GTK file opening/saving dialog
+CLOSED: [2021-01-31 Sun 12:31]
+It results in a blank white screen, or so I thought. Turns out it was just huge and the blank part is the white part of the file list.
+This helped: https://bbs.archlinux.org/viewtopic.php?pid=1854958#p1854958
 * SSD upgrade [7/7]
 ** DONE Find a suitable SSD
    CLOSED: [2020-02-17 Mon 21:57]
@@ -257,7 +259,11 @@ It results in a blank white screen
   #+BEGIN_SRC sh
   MOZ_USE_XINPUT2=1 env firefox
   #+END_SRC
-* TODO Try out Powertop
+* DONE Try out Powertop
+CLOSED: [2021-01-06 Wed 13:21]
+Actually, nixos-hardware sets up TLP which claims to do what Powertop recommends, so let's start with that.
+* TODO Try out nixos-hardware
+https://github.com/NixOS/nixos-hardware
 * DONE Try out lorri/direnv
   CLOSED: [2020-07-07 Tue 14:44]
 ** It's nice and it works.

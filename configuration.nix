@@ -6,7 +6,9 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      <nixos-hardware/lenovo/thinkpad/x250>
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./wifi.nix
     ];
