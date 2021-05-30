@@ -278,3 +278,5 @@ https://github.com/NixOS/nixos-hardware
 ** Archived Spacemacs ~/.emacs.d to ~/.spacemacs.d
 To unarchive, move Doom Emacs's directory out of the way. Alternatively, set up Chemacs to toggle between the configs.
 https://github.com/plexus/chemacs
+* memory card reader
+** use bashmount, mount with number + m, e.g. 3m
