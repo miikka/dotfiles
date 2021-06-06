@@ -155,10 +155,12 @@
   networking.iproute2.enable = true;
   services.mullvad-vpn.enable = true;
 
+  virtualisation.docker.enable = true;
+
   users.users.miikka = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "audio" "wheel" ];
+    extraGroups = [ "audio" "wheel" "docker" ];
   };
 
   # This value determines the NixOS release with which your system is to be
