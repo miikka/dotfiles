@@ -138,6 +138,9 @@ disabled = true
 [terraform]
 disabled = true
 
+[elm]
+disabled = true
+
 [zig]
 disabled = true
 

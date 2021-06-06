@@ -17,3 +17,13 @@
 	defaultBranch = main
 [pull]
 	ff = only
+[fetch]
+    fsckObjects = true
+[transfer]
+    fsckObjects = true
+[receive]
+    fsckObjects = true
+[protocol "http"]
+    allow = never
+[protocol "git"]
+    allow = never
