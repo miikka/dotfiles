@@ -149,3 +149,6 @@ disabled = true
 
 [perl]
 disabled = true
+
+[gcloud]
+disabled = true
