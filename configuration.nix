@@ -37,6 +37,7 @@
 
   # networking.hostName = "nixos"; # Define your hostname.
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.interfaces = [ "wlp3s0" ];
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -62,7 +63,7 @@
   environment.systemPackages = with pkgs; [
     alacritty git magic-wormhole source-code-pro stow tmux wget vim 
     emacs firefox chromium nodejs mosh fzf direnv brightnessctl
-    xss-lock i3lock
+    xss-lock i3lock starship htop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -132,9 +133,7 @@
       paths = [ "/home/miikka" "/etc/nixos" ];
       repository = "b2:miikka-restic:";
       passwordFile = "/etc/nixos/restic/password";
-      # It's called "s3" credentials file, but you can put any
-      # kind of environmental variables there.
-      s3CredentialsFile = "/etc/nixos/restic/env";
+      environmentFile = "/etc/nixos/restic/env";
       extraBackupArgs = [
         "--exclude-file=/etc/nixos/restic/excludes.txt"
       ];
