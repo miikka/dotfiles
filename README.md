@@ -9,6 +9,7 @@
 `core` can be installed with stow.
 
 ```sh
+mkdir -p "$HOME/bin"
 stow -t "$HOME" core
 ```
 

@@ -27,3 +27,5 @@
     allow = never
 [protocol "git"]
     allow = never
+[includeIf "gitdir:~/p/"]
+    path = .gitconfig.work
