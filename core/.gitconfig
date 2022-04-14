@@ -9,6 +9,10 @@
 	publish = push -u miikka HEAD
 	cach = commit --amend -CHEAD
 	pushf = push --force-with-lease
+	patdiff = difftool -y -x patdiff
+	aliases = !git config -l | egrep \"^alias\\.\" | cut -c 7- | gsed \"s/=/\\t/\" | rs -c -z 0 2
+[core]
+	excludesfile = /Users/miikka/.gitignore_global
 [rerere]
 	enabled = true
 [rebase]
@@ -29,3 +33,5 @@
     allow = never
 [includeIf "gitdir:~/p/"]
     path = .gitconfig.work
+[url "git@github.com:"]
+    insteadOf = https://github.com/
