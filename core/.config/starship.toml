@@ -149,3 +149,12 @@ disabled = true
 
 [perl]
 disabled = true
+
+[gcloud]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[golang]
+disabled = true
