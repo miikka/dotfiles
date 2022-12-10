@@ -15,6 +15,7 @@ Story of my LOL (Linux on Laptop) setup.
 ** DONE Configure Firefox's DPI scaling
    CLOSED: [2020-03-07 Sat 19:57]
    In about:config, set layout.css.devPixelsPerPx to 1.5
+   Update, for NixOS 22.11, had to adjust devPixelsPerPx to 0.8. The config is stored in a file called prefs.js under ~/.mozilla/firefox
 ** DONE Configure Firefox Sync
    CLOSED: [2020-03-07 Sat 19:57]
 ** DONE Install OneTab extension

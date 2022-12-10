@@ -58,17 +58,19 @@
   # Set your time zone.
   time.timeZone = "Europe/Helsinki";
 
+  nixpkgs.config.allowUnfree = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alacritty git magic-wormhole source-code-pro stow tmux wget vim 
     emacs firefox chromium nodejs mosh fzf direnv brightnessctl
-    xss-lock i3lock starship htop
+    xss-lock i3lock starship htop mtr nmap
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
+  programs.mtr.enable = true;
   # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
   
   programs.ssh.startAgent = true;
@@ -76,10 +78,10 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8008 8989 ];
+  #networking.firewall.allowedTCPPorts = [ 8008 8989 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -149,10 +151,6 @@
   services.lorri.enable = true;
 
   services.upower.enable = true;
-
-  # iproute2 must be enabled for mullvad 2020.05 to work on NixOS
-  networking.iproute2.enable = true;
-  services.mullvad-vpn.enable = true;
 
   virtualisation.docker.enable = true;
 
