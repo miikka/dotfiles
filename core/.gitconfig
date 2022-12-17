@@ -31,7 +31,7 @@
     allow = never
 [protocol "git"]
     allow = never
-[includeIf "gitdir:~/p/"]
+[includeIf "gitdir:~/w/"]
     path = .gitconfig.work
 [url "git@github.com:"]
     insteadOf = https://github.com/
