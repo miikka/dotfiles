@@ -61,9 +61,9 @@ disabled = true
 
 # The character stays the same!
 [character]
-success_symbol = "[%%](green)"
-error_symbol = "[%%](green)"
-vicmd_symbol = "[%%](green)"
+success_symbol = "[%](green)"
+error_symbol = "[%](green)"
+vicmd_symbol = "[%](green)"
 
 [status]
 disabled = false
