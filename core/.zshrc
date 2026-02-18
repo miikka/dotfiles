@@ -21,7 +21,7 @@ setopt AUTO_PUSHD
 export PATH=${PATH}:~/bin:~/.cargo/bin
 export EDITOR=vim
 export VISUAL=$EDITOR
-export PAGER=less
+#export PAGER=less
 
 # Colors
 
@@ -68,7 +68,6 @@ case `uname -s` in
 		;;
 esac
 
-alias ach="ack --haskell"
 alias gl='git log "--pretty=format:%Cgreen%h %Cred%an %Creset%s %Cblue(%ar)"'
 alias lt='ls -lhtr'
 alias grep='grep --color=auto'
@@ -97,6 +96,11 @@ l() {
   [[ -d $p ]] && { argv[-1]=(); } || p='.'
   find $p ! -type d | sed 's:^./::' | egrep "${@:-.}"
 }
+
+# atuin
+if command -v atuin >/dev/null 2>&1; then
+  eval "$(atuin init zsh --disable-up-arrow)"
+fi
 
 # Local
 
