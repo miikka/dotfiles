@@ -1,0 +1,8 @@
+[user]
+name = "Miikka Koskinen"
+email = "miikka.koskinen@iki.fi"
+
+[ui]
+default-command = "log"
+pager = "delta"
+diff-formatter = ":git"
