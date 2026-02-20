@@ -18,7 +18,7 @@ setopt AUTO_PUSHD
 
 # Env
 
-export PATH=${PATH}:~/bin:~/.cargo/bin
+export PATH=${PATH}:~/bin:~/.cargo/bin:~/.local/bin
 export EDITOR=vim
 export VISUAL=$EDITOR
 #export PAGER=less
